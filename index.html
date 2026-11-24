@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEGIO | Historia y Roma</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#11110f;color:#eee8dc;font-family:Arial,sans-serif}
+header{padding:22px 8%;border-bottom:1px solid #353127;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:Georgia,serif;font-size:28px;color:#c6a56b;letter-spacing:3px}
+nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:14px}
+.hero{text-align:center;padding:80px 20px 65px;background:linear-gradient(#181713,#11110f)}
+.hero h1{font-family:Georgia,serif;font-size:44px;color:#c6a56b;margin:0 0 15px}
+.hero p{color:#aaa;max-width:600px;margin:auto;line-height:1.7}
+.section{padding:35px 8% 70px}
+.section h2{font-family:Georgia,serif;color:#c6a56b;font-size:28px;margin-bottom:10px}
+.intro{color:#999;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.card{background:#1b1a17;border:1px solid #353127;border-radius:8px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#c6a56b}
+.photo{height:220px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#30271c,#171613);font-size:70px}
+.cardcontent{padding:18px}
+.card h3{font-family:Georgia,serif;font-size:20px;margin:0 0 10px;color:#eee1c7}
+.card p{color:#aaa;font-size:14px;line-height:1.6;min-height:45px}
+.btn{display:block;text-align:center;text-decoration:none;background:#9b7946;color:#fff;padding:12px;border-radius:4px;margin-top:16px;font-weight:bold;font-size:13px}
+.btn:hover{background:#b38d55}
+footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #353127;font-size:13px;line-height:1.7}
+@media(max-width:600px){header{padding:20px;flex-direction:column;gap:15px}nav a{margin:0 8px}.hero h1{font-size:34px}.section{padding:30px 5% 50px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LEGIO</div>
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#libros">Libros</a>
+    <a href="#coleccion">Coleccionismo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>El legado de Roma</h1>
+  <p>Descubre libros, objetos, recreaciones y curiosidades para quienes sienten pasión por la historia del Imperio Romano.</p>
+</section>
+
+<section class="section" id="productos">
+  <h2>Selección para amantes de Roma</h2>
+  <p class="intro">Una selección de objetos y lecturas inspirados en la historia antigua.</p>
+
+  <div class="grid">
+
+    <div class="card" id="libros">
+      <div class="photo">📚</div>
+      <div class="cardcontent">
+        <h3>Libros de historia romana</h3>
+        <p>Descubre grandes obras sobre Roma, sus emperadores, guerras y sociedad.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo">🏛️</div>
+      <div class="cardcontent">
+        <h3>Bustos romanos</h3>
+        <p>Decoración inspirada en emperadores y personajes de la antigua Roma.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+      </div>
+    </div>
+
+    <div class="card" id="coleccion">
+      <div class="photo">🪙</div>
+      <div class="cardcontent">
+        <h3>Monedas y coleccionismo</h3>
+        <p>Objetos y piezas inspirados en la numismática y la historia imperial.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo">🛡️</div>
+      <div class="cardcontent">
+        <h3>Legiones romanas</h3>
+        <p>Réplicas, miniaturas y objetos relacionados con el ejército romano.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo">⚔️</div>
+      <div class="cardcontent">
+        <h3>Gladiadores</h3>
+        <p>Descubre productos inspirados en el mundo de los gladiadores y la arena.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo">🎲</div>
+      <div class="cardcontent">
+        <h3>Juegos históricos</h3>
+        <p>Juegos de mesa y estrategia ambientados en la antigüedad.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  LEGIO · Un espacio para los amantes de la historia.<br><br>
+  Como asociado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos.
+</footer>
+
+</body>
+</html>
