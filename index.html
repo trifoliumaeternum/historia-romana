@@ -42,7 +42,7 @@ nav a {
 
 .hero {
   text-align: center;
-  padding: 80px 20px 65px;
+  padding: 75px 20px;
   background: linear-gradient(#181713, #11110f);
 }
 
@@ -68,18 +68,51 @@ nav a {
   font-family: Georgia, serif;
   color: #c6a56b;
   font-size: 28px;
-  margin-bottom: 10px;
 }
 
 .intro {
   color: #999;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
+
+/* PESTAÑAS */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0 30px;
+}
+
+.tab {
+  background: #1b1a17;
+  color: #d5c5a4;
+  border: 1px solid #50432d;
+  border-radius: 5px;
+  padding: 12px 17px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: .2s;
+}
+
+.tab:hover {
+  background: #30271c;
+  border-color: #c6a56b;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #c9a44c, #9c762b);
+  color: #111;
+  border-color: #c9a44c;
+}
+
+/* PRODUCTOS */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
 }
 
 .card {
@@ -87,6 +120,7 @@ nav a {
   border: 1px solid #353127;
   border-radius: 8px;
   overflow: hidden;
+  padding: 18px;
   transition: .2s;
 }
 
@@ -95,39 +129,40 @@ nav a {
   border-color: #c6a56b;
 }
 
-.photo {
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, #30271c, #171613);
-  font-size: 70px;
-}
-
-.cardcontent {
-  padding: 18px;
-}
-
 .card h3 {
   font-family: Georgia, serif;
-  font-size: 20px;
-  margin: 0 0 10px;
   color: #eee1c7;
-}
-
-.card h4 {
-  color: #c6a56b;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.4;
+  min-height: 45px;
 }
 
 .card p {
   color: #aaa;
   font-size: 14px;
   line-height: 1.6;
-  min-height: 45px;
 }
 
-/* BOTONES DORADOS */
+.book-cover {
+  width: 150px;
+  max-width: 100%;
+  height: 190px;
+  object-fit: contain;
+  display: block;
+  margin: 12px auto;
+  border-radius: 7px;
+}
+
+.photo {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #30271c, #171613);
+  font-size: 65px;
+  border-radius: 5px;
+}
+
 .btn {
   display: block;
   text-align: center;
@@ -140,12 +175,22 @@ nav a {
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 1px;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .btn:hover {
   background: #e5c36b;
   transform: translateY(-2px);
+}
+
+/* CONTENIDO DE PESTAÑAS */
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
 }
 
 footer {
@@ -175,6 +220,15 @@ footer {
   .section {
     padding: 30px 5% 50px;
   }
+
+  .tabs {
+    gap: 7px;
+  }
+
+  .tab {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
 }
 </style>
 </head>
@@ -184,107 +238,161 @@ footer {
 <header>
   <div class="logo">LEGIO</div>
   <nav>
-    <a href="#productos">Productos</a>
-    <a href="#libros">Libros</a>
-    <a href="#coleccion">Coleccionismo</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#categorias">Categorías</a>
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
   <h1>El legado de Roma</h1>
   <p>Descubre libros, objetos, recreaciones y curiosidades para quienes sienten pasión por la historia del Imperio Romano.</p>
 </section>
 
-<section class="section" id="productos">
-  <h2>Selección para amantes de Roma</h2>
-  <p class="intro">Una selección de objetos y lecturas inspirados en la historia antigua.</p>
+<section class="section" id="categorias">
 
-  <div class="grid">
+  <h2>Explora nuestras categorías</h2>
+  <p class="intro">Encuentra productos inspirados en la antigua Roma.</p>
 
-  
-<div class="card" id="libros">
-  <div class="cardcontent">
-    <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
-    <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-    <p>Una apasionante novela sobre Escipión y el ascenso de Roma.</p>
-    <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+  <!-- PESTAÑAS -->
+
+  <div class="tabs">
+    <button class="tab active" data-tab="libros">📚 Libros</button>
+    <button class="tab" data-tab="camisetas">👕 Camisetas</button>
+    <button class="tab" data-tab="bustos">🏛️ Bustos</button>
+    <button class="tab" data-tab="monedas">🪙 Monedas</button>
+    <button class="tab" data-tab="legiones">🛡️ Legiones</button>
+    <button class="tab" data-tab="gladiadores">⚔️ Gladiadores</button>
+    <button class="tab" data-tab="juegos">🎲 Juegos</button>
+    <button class="tab" data-tab="mapas">🗺️ Mapas y pósteres</button>
   </div>
-</div>
 
-<div class="card">
-  <div class="cardcontent">
-    <h3>LAS LEGIONES MALDITAS</h3>
-    <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-    <p>Descubre las campañas militares y las grandes historias de las legiones romanas.</p>
-    <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+  <!-- LIBROS -->
+
+  <div class="tab-content active" id="libros">
+    <div class="grid">
+
+      <div class="card">
+        <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
+        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
+        <p>Una apasionante novela sobre Escipión y el ascenso de Roma.</p>
+        <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+      </div>
+
+      <div class="card">
+        <h3>LAS LEGIONES MALDITAS</h3>
+        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
+        <p>Descubre las campañas militares y las grandes historias de las legiones romanas.</p>
+        <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+      </div>
+
+      <div class="card">
+        <h3>LA TRAICIÓN DE ROMA</h3>
+        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
+        <p>Una apasionante historia sobre el poder, la política y los últimos años de Escipión.</p>
+        <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+      </div>
+
+      <div class="card">
+        <h3>TRILOGÍA DE TRAJANO</h3>
+        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1000_.jpg" alt="Trilogía de Trajano">
+        <p>Descubre la historia de Roma a través de grandes obras de divulgación histórica.</p>
+        <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+      </div>
+
+    </div>
   </div>
-</div>
 
-<div class="card">
-  <div class="cardcontent">
-    <h3>LA TRAICIÓN DE ROMA</h3>
-    <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-    <p>Una apasionante historia sobre el poder, la política y los últimos años de Escipión.</p>
-    <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
-  </div>
-</div>
+  <!-- CAMISETAS -->
 
-<div class="card">
-  <div class="cardcontent">
-    <h3>TRILOGÍA DE TRAJANO</h3>
-    <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1000_.jpg" alt="Trilogía de Trajano" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-    <p>Descubre la historia de Roma a través de grandes obras de divulgación histórica.</p>
-    <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
-  </div>
-</div>
-
-
-    <div class="card">
-      <div class="photo">🏛️</div>
-      <div class="cardcontent">
-        <h3>Bustos romanos</h3>
-        <p>Decoración inspirada en emperadores y personajes de la antigua Roma.</p>
+  <div class="tab-content" id="camisetas">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">👕</div>
+        <h3>Camisetas romanas</h3>
+        <p>Diseños inspirados en las legiones, los emperadores y el Imperio Romano.</p>
         <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
+  </div>
 
-    <div class="card" id="coleccion">
-      <div class="photo">🪙</div>
-      <div class="cardcontent">
-        <h3>Monedas y coleccionismo</h3>
-        <p>Objetos y piezas inspirados en la numismática y la historia imperial.</p>
+  <!-- BUSTOS -->
+
+  <div class="tab-content" id="bustos">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">🏛️</div>
+        <h3>Bustos de emperadores</h3>
+        <p>Esculturas y decoración inspiradas en los grandes personajes de Roma.</p>
         <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="photo">🛡️</div>
-      <div class="cardcontent">
-        <h3>Legiones romanas</h3>
-        <p>Réplicas, miniaturas y objetos relacionados con el ejército romano.</p>
+  <!-- MONEDAS -->
+
+  <div class="tab-content" id="monedas">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">🪙</div>
+        <h3>Monedas romanas</h3>
+        <p>Objetos y piezas para los amantes de la numismática y el coleccionismo.</p>
         <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="photo">⚔️</div>
-      <div class="cardcontent">
-        <h3>Gladiadores</h3>
-        <p>Descubre productos inspirados en el mundo de los gladiadores y la arena.</p>
+  <!-- LEGIONES -->
+
+  <div class="tab-content" id="legiones">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">🛡️</div>
+        <h3>Miniaturas y legiones</h3>
+        <p>Figuras, réplicas y objetos relacionados con el ejército romano.</p>
         <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="photo">🎲</div>
-      <div class="cardcontent">
+  <!-- GLADIADORES -->
+
+  <div class="tab-content" id="gladiadores">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">⚔️</div>
+        <h3>El mundo de los gladiadores</h3>
+        <p>Productos y recreaciones inspirados en los combates de la arena.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JUEGOS -->
+
+  <div class="tab-content" id="juegos">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">🎲</div>
         <h3>Juegos históricos</h3>
-        <p>Juegos de mesa y estrategia ambientados en la antigüedad.</p>
+        <p>Juegos de mesa y estrategia ambientados en la antigua Roma.</p>
         <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
-
   </div>
+
+  <!-- MAPAS -->
+
+  <div class="tab-content" id="mapas">
+    <div class="grid">
+      <div class="card">
+        <div class="photo">🗺️</div>
+        <h3>Mapas del Imperio Romano</h3>
+        <p>Mapas históricos y láminas para descubrir la expansión de Roma.</p>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <footer>
@@ -292,5 +400,25 @@ footer {
   Como asociado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos.
 </footer>
 
+<script>
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(item => item.classList.remove("active"));
+    contents.forEach(content => content.classList.remove("active"));
+
+    tab.classList.add("active");
+
+    const selected = document.getElementById(tab.dataset.tab);
+    if (selected) {
+      selected.classList.add("active");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
+
