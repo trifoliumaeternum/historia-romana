@@ -1,50 +1,184 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEGIO | Historia y Roma</title>
+
 <style>
-  .btn {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #11110f;
+  color: #eee8dc;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 22px 8%;
+  border-bottom: 1px solid #353127;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: #c6a56b;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 65px;
+  background: linear-gradient(#181713, #11110f);
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: 44px;
+  color: #c6a56b;
+  margin: 0 0 15px;
+}
+
+.hero p {
+  color: #aaa;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+.section {
+  padding: 35px 8% 70px;
+}
+
+.section h2 {
+  font-family: Georgia, serif;
+  color: #c6a56b;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #1b1a17;
+  border: 1px solid #353127;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #c6a56b;
+}
+
+.photo {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #30271c, #171613);
+  font-size: 70px;
+}
+
+.cardcontent {
+  padding: 18px;
+}
+
+.card h3 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #eee1c7;
+}
+
+.card h4 {
+  color: #c6a56b;
+  line-height: 1.5;
+}
+
+.card p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 45px;
+}
+
+/* BOTONES DORADOS */
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
   background: linear-gradient(135deg, #c9a44c, #9c762b);
   color: #111 !important;
-  padding: 11px 22px;
+  padding: 12px;
   border-radius: 6px;
-  text-decoration: none;
+  margin-top: 16px;
   font-weight: bold;
+  font-size: 13px;
   letter-spacing: 1px;
-  display: inline-block;
   transition: 0.3s;
 }
 
 .btn:hover {
   background: #e5c36b;
   transform: translateY(-2px);
-}<style>
-*{box-sizing:border-box}
-body{margin:0;background:#11110f;color:#eee8dc;font-family:Arial,sans-serif}
-header{padding:22px 8%;border-bottom:1px solid #353127;display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:Georgia,serif;font-size:28px;color:#c6a56b;letter-spacing:3px}
-nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:14px}
-.hero{text-align:center;padding:80px 20px 65px;background:linear-gradient(#181713,#11110f)}
-.hero h1{font-family:Georgia,serif;font-size:44px;color:#c6a56b;margin:0 0 15px}
-.hero p{color:#aaa;max-width:600px;margin:auto;line-height:1.7}
-.section{padding:35px 8% 70px}
-.section h2{font-family:Georgia,serif;color:#c6a56b;font-size:28px;margin-bottom:10px}
-.intro{color:#999;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.card{background:#1b1a17;border:1px solid #353127;border-radius:8px;overflow:hidden;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#c6a56b}
-.photo{height:220px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#30271c,#171613);font-size:70px}
-.cardcontent{padding:18px}
-.card h3{font-family:Georgia,serif;font-size:20px;margin:0 0 10px;color:#eee1c7}
-.card p{color:#aaa;font-size:14px;line-height:1.6;min-height:45px}
-.btn{display:block;text-align:center;text-decoration:none;background:#9b7946;color:#fff;padding:12px;border-radius:4px;margin-top:16px;font-weight:bold;font-size:13px}
-.btn:hover{background:#b38d55}
-footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #353127;font-size:13px;line-height:1.7}
-@media(max-width:600px){header{padding:20px;flex-direction:column;gap:15px}nav a{margin:0 8px}.hero h1{font-size:34px}.section{padding:30px 5% 50px}}
+}
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #777;
+  border-top: 1px solid #353127;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media(max-width:600px) {
+  header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .section {
+    padding: 30px 5% 50px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -68,49 +202,49 @@ footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #3531
   <div class="grid">
 
     <div class="card" id="libros">
-  <div class="photo">📚</div>
-  <div class="cardcontent">
-    <h3>Libros recomendados sobre Roma</h3>
-    <p>Una selección de libros para profundizar en la historia, los emperadores y las legiones romanas.</p>
+      <div class="photo">📚</div>
+      <div class="cardcontent">
 
-    
-    <div style="margin-top:15px">
-  <h4>AFRICANUS: EL HIJO DEL CÓNSUL – SANTIAGO POSTEGUILLO</h4>
-      <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Portada del segundo libro de historia romana" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-  <p>Una nueva lectura para descubrir más sobre la historia y la civilización romana.</p>
-  <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
-</div>
+        <h3>Libros recomendados sobre Roma</h3>
+        <p>Una selección de libros para profundizar en la historia, los emperadores y las legiones romanas.</p>
 
-    <div style="margin-top:15px">
-  <h4>LAS LEGIONES MALDITAS – SANTIAGO POSTEGUILLO</h4>
-      <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Portada del tercer libro sobre la antigua Roma" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-  <p>Descubre la civilización romana a través de fascinantes infografías que explican su historia, sociedad y evolución.</p>
-  <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
-</div>
+        <div style="margin-top:15px">
+          <h4>AFRICANUS: EL HIJO DEL CÓNSUL – SANTIAGO POSTEGUILLO</h4>
+          <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus: El hijo del cónsul" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
+          <p>Una nueva lectura para descubrir más sobre la historia y la civilización romana.</p>
+          <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+        </div>
 
-    <div style="margin-top:15px">
-  <h4>LA TRAICIÓN DE ROMA – SANTIAGO POSTEGUILLO</h4>
-      <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="Portada del tercer libro sobre la antigua Roma" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-  <p>Descubre la civilización romana a través de fascinantes infografías que explican su historia, sociedad y evolución.</p>
-  <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
-</div>
+        <div style="margin-top:15px">
+          <h4>LAS LEGIONES MALDITAS – SANTIAGO POSTEGUILLO</h4>
+          <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
+          <p>Descubre las campañas militares y las grandes historias de las legiones romanas.</p>
+          <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+        </div>
 
-    <div style="margin-top:15px">
-      <h4>TRILOGÍA DE TRAJANO – SANTIAGO POSTEGUILLO</h4>
-<img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1000_.jpg" alt="Trilogía de Trajano de Santiago Posteguillo" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
-      <p>Descubre la historia de Roma a través de grandes obras de divulgación histórica.</p>
-      <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+        <div style="margin-top:15px">
+          <h4>LA TRAICIÓN DE ROMA – SANTIAGO POSTEGUILLO</h4>
+          <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
+          <p>Una apasionante historia sobre el poder, la política y los últimos años de Escipión.</p>
+          <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+        </div>
+
+        <div style="margin-top:15px">
+          <h4>TRILOGÍA DE TRAJANO – SANTIAGO POSTEGUILLO</h4>
+          <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1000_.jpg" alt="Trilogía de Trajano de Santiago Posteguillo" style="width:150px; border-radius:8px; display:block; margin:10px auto;">
+          <p>Descubre la historia de Roma a través de grandes obras de divulgación histórica.</p>
+          <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">CONSULTAR LIBRO</a>
+        </div>
+
+      </div>
     </div>
-
-  </div>
-</div>
 
     <div class="card">
       <div class="photo">🏛️</div>
       <div class="cardcontent">
         <h3>Bustos romanos</h3>
         <p>Decoración inspirada en emperadores y personajes de la antigua Roma.</p>
-        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
 
@@ -119,7 +253,7 @@ footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #3531
       <div class="cardcontent">
         <h3>Monedas y coleccionismo</h3>
         <p>Objetos y piezas inspirados en la numismática y la historia imperial.</p>
-        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
 
@@ -128,7 +262,7 @@ footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #3531
       <div class="cardcontent">
         <h3>Legiones romanas</h3>
         <p>Réplicas, miniaturas y objetos relacionados con el ejército romano.</p>
-        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
 
@@ -137,7 +271,7 @@ footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #3531
       <div class="cardcontent">
         <h3>Gladiadores</h3>
         <p>Descubre productos inspirados en el mundo de los gladiadores y la arena.</p>
-        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
 
@@ -146,7 +280,7 @@ footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #3531
       <div class="cardcontent">
         <h3>Juegos históricos</h3>
         <p>Juegos de mesa y estrategia ambientados en la antigüedad.</p>
-        <a class="btn" href="https://www.amazon.es/" target="_blank">VER EN AMAZON</a>
+        <a class="btn" href="https://www.amazon.es/" target="_blank" rel="noopener noreferrer">VER EN AMAZON</a>
       </div>
     </div>
 
