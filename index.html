@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>TRIFOLIUMAETERNUM | Historia y Roma</title>
+
 <style>
 * {
   box-sizing: border-box;
@@ -18,21 +19,34 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* CABECERA */
+/* CABECERA Y LOGO */
 
 header {
-  padding: 22px 8%;
+  padding: 18px 8%;
   border-bottom: 1px solid #353127;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
-.logo {
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   font-family: Georgia, serif;
-  font-size: 28px;
+  font-size: 22px;
   color: #c6a56b;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.brand img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #c6a56b;
 }
 
 nav a {
@@ -42,12 +56,16 @@ nav a {
   font-size: 14px;
 }
 
+nav a:hover {
+  color: #c6a56b;
+}
+
 /* PRESENTACIÓN */
 
 .hero {
   text-align: center;
   padding: 80px 20px 65px;
-  background: linear-gradient(#181713, #11110f);
+  background: linear-gradient(#24100f, #181713, #11110f);
 }
 
 .hero h1 {
@@ -164,7 +182,7 @@ nav a {
   border-radius: 7px;
 }
 
-/* IMAGEN DE CATEGORÍAS */
+/* IMÁGENES DE CATEGORÍAS */
 
 .photo {
   height: 150px;
@@ -220,13 +238,24 @@ footer {
   line-height: 1.7;
 }
 
-/* MÓVILES */
+/* DISEÑO PARA MÓVILES */
 
 @media(max-width:600px) {
   header {
     padding: 20px;
     flex-direction: column;
     gap: 15px;
+  }
+
+  .brand {
+    font-size: 15px;
+    gap: 10px;
+    letter-spacing: 1px;
+  }
+
+  .brand img {
+    width: 58px;
+    height: 58px;
   }
 
   nav a {
@@ -259,18 +288,28 @@ footer {
 
 <body>
 
+<!-- CABECERA -->
+
 <header>
-  <div class="logo">LEGIO</div>
+  <div class="brand">
+    <img src="logo-trifolium.jpg..jpg" alt="Logo de Trifolium Aeternum">
+    <span>TRIFOLIUMAETERNUM</span>
+  </div>
+
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#categorias">Categorías</a>
   </nav>
 </header>
 
+<!-- PRESENTACIÓN -->
+
 <section class="hero" id="inicio">
   <h1>El legado de Roma</h1>
   <p>Descubre libros, objetos, recreaciones y curiosidades para quienes sienten pasión por la historia del Imperio Romano.</p>
 </section>
+
+<!-- CATEGORÍAS -->
 
 <section class="section" id="categorias">
 
@@ -419,10 +458,14 @@ footer {
 
 </section>
 
+<!-- PIE DE PÁGINA -->
+
 <footer>
-  LEGIO · Un espacio para los amantes de la historia.<br><br>
+  TRIFOLIUMAETERNUM · Un espacio para los amantes de la historia.<br><br>
   Como asociado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos.
 </footer>
+
+<!-- FUNCIONAMIENTO DE LAS PESTAÑAS -->
 
 <script>
 const tabs = document.querySelectorAll(".tab");
