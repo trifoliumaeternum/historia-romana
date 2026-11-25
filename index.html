@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TRIFOLIUMAETERNUM | Historia y Roma</title>
 
 <style>
@@ -18,7 +17,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* CABECERA Y LOGO */
+/* CABECERA */
 
 header {
   padding: 18px 8%;
@@ -81,7 +80,7 @@ nav a:hover {
   line-height: 1.7;
 }
 
-/* SECCIÓN PRINCIPAL */
+/* SECCIÓN */
 
 .section {
   padding: 45px 8% 75px;
@@ -131,46 +130,29 @@ nav a:hover {
   border-color: #c9a44c;
 }
 
-/* CUADRÍCULA DE PRODUCTOS */
+/* CUADRÍCULA */
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 280px));
-    justify-content: center;
-    gap: 24px;
-  }
-
-  .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.18);
-    border: 1px solid #d4af37;
-  }
-
-  .card .btn:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
-  }
-
-</style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 280px));
+  justify-content: center;
+  gap: 24px;
+}
 
 /* TARJETAS */
 
 .card {
   background: #1b1a17;
-  border: 1px solid #353127;
+  border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 8px;
   padding: 18px;
-  transition: .2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: #c6a56b;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.18);
+  border: 1px solid #d4af37;
 }
 
 .card h3 {
@@ -188,7 +170,7 @@ nav a:hover {
   margin: 12px 0;
 }
 
-/* PORTADAS DE LIBROS */
+/* PORTADAS */
 
 .book-cover {
   width: 150px;
@@ -199,7 +181,7 @@ nav a:hover {
   border-radius: 7px;
 }
 
-/* IMÁGENES DE CATEGORÍAS */
+/* IMÁGENES */
 
 .photo {
   height: 150px;
@@ -232,9 +214,10 @@ nav a:hover {
 .btn:hover {
   background: #e5c36b;
   transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
 }
 
-/* CONTENIDO DE PESTAÑAS */
+/* PESTAÑAS CONTENIDO */
 
 .tab-content {
   display: none;
@@ -244,7 +227,7 @@ nav a:hover {
   display: block;
 }
 
-/* PIE DE PÁGINA */
+/* PIE */
 
 footer {
   text-align: center;
@@ -255,7 +238,7 @@ footer {
   line-height: 1.7;
 }
 
-/* DISEÑO PARA MÓVILES */
+/* MÓVILES */
 
 @media(max-width:600px) {
   header {
@@ -316,7 +299,7 @@ footer {
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#categorias">Categorías</a>
-      <a href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">YouTube</a>
   </nav>
 </header>
 
@@ -334,8 +317,6 @@ footer {
 
   <h2>Explora nuestras categorías</h2>
   <p class="intro">Encuentra productos inspirados en la antigua Roma.</p>
-
-  <!-- PESTAÑAS -->
 
   <div class="tabs">
     <button class="tab active" data-tab="libros">📚 Libros</button>
@@ -462,7 +443,7 @@ footer {
     </div>
   </div>
 
-  <!-- MAPAS Y PÓSTERES -->
+  <!-- MAPAS -->
 
   <div class="tab-content" id="mapas">
     <div class="grid">
@@ -477,14 +458,14 @@ footer {
 
 </section>
 
-<!-- PIE DE PÁGINA -->
+<!-- PIE -->
 
 <footer>
   TRIFOLIUMAETERNUM · Un espacio para los amantes de la historia.<br><br>
   Como asociado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos.
 </footer>
 
-<!-- FUNCIONAMIENTO DE LAS PESTAÑAS -->
+<!-- JAVASCRIPT -->
 
 <script>
 const tabs = document.querySelectorAll(".tab");
@@ -492,7 +473,6 @@ const contents = document.querySelectorAll(".tab-content");
 
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
-
     tabs.forEach(item => item.classList.remove("active"));
     contents.forEach(content => content.classList.remove("active"));
 
