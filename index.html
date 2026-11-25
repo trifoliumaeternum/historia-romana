@@ -172,7 +172,7 @@ nav a:hover {
   justify-content: center;
 }
 
-/* PORTADAS */
+/* PORTADAS INDIVIDUALES */
 
 .book-cover {
   width: 150px;
@@ -182,6 +182,19 @@ nav a:hover {
   display: block;
   margin: 5px auto;
   border-radius: 7px;
+}
+
+/* IMÁGENES DE RECOPILATORIOS */
+
+.bundle-cover {
+  width: 125px;
+  max-width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto;
+  border-radius: 7px;
+  mix-blend-mode: multiply;
 }
 
 /* AUTOR */
@@ -253,35 +266,6 @@ nav a:hover {
   display: block;
 }
 
-/* SEPARACIÓN POR COLECCIONES */
-
-.collection {
-  margin-bottom: 48px;
-}
-
-.collection-title {
-  font-family: Georgia, serif;
-  color: #c6a56b;
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 1px;
-  margin: 5px 0 10px;
-}
-
-.collection-line {
-  width: 100%;
-  max-width: 250px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c6a56b, transparent);
-  margin: 0 auto 25px;
-}
-
-.collection-note {
-  color: #999;
-  text-align: center;
-  margin: 0 0 30px;
-}
-
 /* PIE */
 
 footer {
@@ -339,9 +323,32 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 280px));
   }
 
-  .collection-title {
+  .collection-heading {
     font-size: 22px;
   }
+}
+
+/* ORGANIZACIÓN POR COLECCIONES */
+
+.collection {
+  margin: 0 0 48px;
+}
+
+.collection-heading {
+  font-family: Georgia, serif;
+  color: #c6a56b;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 5px 0 10px;
+}
+
+.collection-line {
+  width: 100%;
+  max-width: 250px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c6a56b, transparent);
+  margin: 0 auto 25px;
 }
 </style>
 </head>
@@ -368,7 +375,7 @@ footer {
 <section class="hero" id="inicio">
   <h1>El legado de Roma</h1>
   <p>Descubre libros, objetos, recreaciones y curiosidades para quienes sienten pasión por la historia del Imperio Romano.</p>
-  <a href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer" class="btn">VISITA NUESTRO CANAL DE YOUTUBE</a>
+  <a class="btn" href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">VISITA NUESTRO CANAL DE YOUTUBE</a>
 </section>
 
 <!-- CATEGORÍAS -->
@@ -397,7 +404,7 @@ footer {
 
     <section class="collection">
 
-      <h3 class="collection-title">TRILOGÍA AFRICANUS</h3>
+      <h3 class="collection-heading">TRILOGÍA AFRICANUS</h3>
       <div class="collection-line"></div>
 
       <div class="grid">
@@ -428,7 +435,7 @@ footer {
 
         <div class="card">
           <h3>TRILOGÍA AFRICANUS</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81WqID44RPL._SL1500_.jpg" alt="Trilogía Africanus">
+          <img class="bundle-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81WqID44RPL._SL1500_.jpg" alt="Trilogía Africanus">
           <div class="author">Santiago Posteguillo</div>
           <p>Revive la Segunda Guerra Púnica a través de la épica trilogía de Santiago Posteguillo. Desde los primeros pasos de Escipión hasta su enfrentamiento con Aníbal, descubre una de las grandes historias de la antigua Roma.</p>
           <a class="btn" href="https://link.amazon/B0ejEZ1jS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -441,7 +448,7 @@ footer {
 
     <section class="collection">
 
-      <h3 class="collection-title">SERIE JULIO CÉSAR</h3>
+      <h3 class="collection-heading">SERIE JULIO CÉSAR</h3>
       <div class="collection-line"></div>
 
       <div class="grid">
@@ -472,7 +479,7 @@ footer {
 
         <div class="card">
           <h3>TRILOGÍA DE JULIO CÉSAR</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/7166r4+vLbL._SL1500_.jpg" alt="Trilogía de Julio César">
+          <img class="bundle-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/7166r4+vLbL._SL1500_.jpg" alt="Trilogía de Julio César">
           <div class="author">Santiago Posteguillo</div>
           <p>Descubre el ascenso de Julio César, desde sus primeros pasos en la política romana hasta la conquista de las Galias, en una épica trilogía repleta de intrigas, batallas, ambición y lucha por el poder.</p>
           <a class="btn" href="https://link.amazon/B0dbpleLU" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -485,7 +492,7 @@ footer {
 
     <section class="collection">
 
-      <h3 class="collection-title">TRILOGÍA DE TRAJANO</h3>
+      <h3 class="collection-heading">TRILOGÍA DE TRAJANO</h3>
       <div class="collection-line"></div>
 
       <div class="grid">
@@ -516,7 +523,7 @@ footer {
 
         <div class="card">
           <h3>TRILOGÍA DE TRAJANO</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1500_.jpg" alt="Trilogía de Trajano">
+          <img class="bundle-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1500_.jpg" alt="Trilogía de Trajano">
           <div class="author">Santiago Posteguillo</div>
           <p>Descubre la historia de Trajano, el emperador que llevó Roma a su máxima expansión, a través de una apasionante trilogía repleta de intrigas, guerras y ambición.</p>
           <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -529,10 +536,10 @@ footer {
 
     <section class="collection">
 
-      <h3 class="collection-title">OTROS LIBROS DE ROMA</h3>
+      <h3 class="collection-heading">OTROS LIBROS DE ROMA</h3>
       <div class="collection-line"></div>
 
-      <p class="collection-note">
+      <p class="intro" style="text-align:center">
         Próximamente incorporaremos más libros y obras sobre la historia de Roma.
       </p>
 
