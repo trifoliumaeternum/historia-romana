@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -254,6 +253,35 @@ nav a:hover {
   display: block;
 }
 
+/* SEPARACIÓN POR COLECCIONES */
+
+.collection {
+  margin-bottom: 48px;
+}
+
+.collection-title {
+  font-family: Georgia, serif;
+  color: #c6a56b;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 5px 0 10px;
+}
+
+.collection-line {
+  width: 100%;
+  max-width: 250px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c6a56b, transparent);
+  margin: 0 auto 25px;
+}
+
+.collection-note {
+  color: #999;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
 /* PIE */
 
 footer {
@@ -310,6 +338,10 @@ footer {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 280px));
   }
+
+  .collection-title {
+    font-size: 22px;
+  }
 }
 </style>
 </head>
@@ -360,105 +392,152 @@ footer {
   <!-- LIBROS -->
 
   <div class="tab-content active" id="libros">
-    <div class="grid">
 
-      <div class="card">
-        <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
-        <div class="author">Santiago Posteguillo</div>
-        <p>La apasionante historia de Publio Cornelio Escipión, el hombre que desafió a Aníbal y cambió el destino de Roma en plena Segunda Guerra Púnica.</p>
-        <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+    <!-- TRILOGÍA AFRICANUS -->
 
-      <div class="card">
-        <h3>LAS LEGIONES MALDITAS</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Roma se juega su supervivencia. Escipión afronta uno de los mayores desafíos militares de su carrera en una epopeya marcada por la guerra, el honor y la venganza.</p>
-        <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+    <section class="collection">
 
-      <div class="card">
-        <h3>LA TRAICIÓN DE ROMA</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Última novela de la «Trilogía Africanus», en la que descubriremos el épico final de dos de los personajes más legendarios de la historia: Escipión y Aníbal.</p>
-        <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+      <h3 class="collection-title">TRILOGÍA AFRICANUS</h3>
+      <div class="collection-line"></div>
 
- <div class="card">
-        <h3>TRILOGÍA AFRICANUS</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81WqID44RPL._SL1500_.jpg" alt="Trilogía Africanus">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Revive la Segunda Guerra Púnica a través de la épica trilogía de Santiago Posteguillo. Desde los primeros pasos de Escipión hasta su enfrentamiento con Aníbal, descubre una de las grandes historias de la antigua Roma.</p>
-        <a class="btn" href="https://link.amazon/B0ejEZ1jS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+      <div class="grid">
 
- <div class="card">
-        <h3>ROMA SOY YO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/719yqLXOmyL._SL1500_.jpg" alt="Roma soy yo">
-        <div class="author">Santiago Posteguillo</div>
-        <p>El joven Julio César se enfrenta a un sistema corrupto en una Roma dominada por la ambición y el poder. Una historia de justicia, valentía y el comienzo de una leyenda.</p>
-        <a class="btn" href="https://link.amazon/B05oCQ5Ur" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+        <div class="card">
+          <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
+          <div class="author">Santiago Posteguillo</div>
+          <p>La apasionante historia de Publio Cornelio Escipión, el hombre que desafió a Aníbal y cambió el destino de Roma en plena Segunda Guerra Púnica.</p>
+          <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
 
- <div class="card">
-        <h3>MALDITA ROMA</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71BKmvsLHfL._SL1500_.jpg" alt="Maldita Roma">
-        <div class="author">Santiago Posteguillo</div>
-        <p>César lucha por abrirse camino en una Roma llena de conspiraciones, rivalidades y enemigos. Su ambición y talento político y militar lo conducirán hacia un destino extraordinario.</p>
-        <a class="btn" href="https://link.amazon/B05bEJqrp" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
-      
- <div class="card">
-        <h3>LOS TRES MUNDOS</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71UxSzBdasL._SL1500_.jpg" alt="Los tres mundos">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Julio César se lanza a la conquista de las Galias en una epopeya que entrelaza guerras, conspiraciones políticas y destinos enfrentados. Roma, la Galia y Egipto se convierten en escenario de una historia de ambición, poder y conquista.</p>
-        <a class="btn" href="https://link.amazon/B04yWQQmM" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+        <div class="card">
+          <h3>LAS LEGIONES MALDITAS</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Roma se juega su supervivencia. Escipión afronta uno de los mayores desafíos militares de su carrera en una epopeya marcada por la guerra, el honor y la venganza.</p>
+          <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
 
-      <div class="card">
-        <h3>TRILOGÍA DE JULIO CÉSAR</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/7166r4+vLbL._SL1500_.jpg" alt="Trilogía de Julio César">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Descubre el ascenso de Julio César, desde sus primeros pasos en la política romana hasta la conquista de las Galias, en una épica trilogía repleta de intrigas, batallas, ambición y lucha por el poder. </p>
-        <a class="btn" href="https://link.amazon/B0dbpleLU" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
-      
- <div class="card">
-        <h3>LOS ASESINOS DEL EMPERADOR</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61aF5R5hOAL._SL1050_.jpg" alt="Los asesinos del emperador">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Intrigas, conspiraciones, gladiadores y luchas por el poder en una Roma convulsa. Descubre el camino que llevó a Trajano a convertirse en el primer emperador hispano de Roma.</p>
-        <a class="btn" href="https://link.amazon/B01HPeV9r" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+        <div class="card">
+          <h3>LA TRAICIÓN DE ROMA</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Última novela de la «Trilogía Africanus», en la que descubriremos el épico final de dos de los personajes más legendarios de la historia: Escipión y Aníbal.</p>
+          <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
 
-       <div class="card">
-        <h3>CIRCO MÁXIMO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61TGX2+j6cL._SL1050_.jpg" alt="La traición de Roma">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Trajano gobierna el mayor imperio del mundo, pero las guerras, las conspiraciones y las traiciones amenazan su poder. Una apasionante historia de ambición, lealtad y lucha por Roma.</p>
-        <a class="btn" href="https://link.amazon/B0bU5ZTBd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+        <div class="card">
+          <h3>TRILOGÍA AFRICANUS</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81WqID44RPL._SL1500_.jpg" alt="Trilogía Africanus">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Revive la Segunda Guerra Púnica a través de la épica trilogía de Santiago Posteguillo. Desde los primeros pasos de Escipión hasta su enfrentamiento con Aníbal, descubre una de las grandes historias de la antigua Roma.</p>
+          <a class="btn" href="https://link.amazon/B0ejEZ1jS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
 
-       <div class="card">
-        <h3>LA LEGIÓN PERDIDA</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61mHWk2dQTL._SL1050_.jpg" alt="La traición de Roma">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Trajano emprende la gran campaña hacia Oriente en busca de la gloria y la conquista. Una épica aventura entre Roma, Partia y tierras lejanas que culmina la trilogía.</p>
-        <a class="btn" href="https://link.amazon/B00Ymm3pQ" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
-      
-      <div class="card">
-        <h3>TRILOGÍA DE TRAJANO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1500_.jpg" alt="Trilogía de Trajano">
-        <div class="author">Santiago Posteguillo</div>
-        <p>Descubre la historia de Trajano, el emperador que llevó Roma a su máxima expansión, a través de una apasionante trilogía repleta de intrigas, guerras y ambición.</p>
-        <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-      </div>
+    </section>
 
-    </div>
+    <!-- SERIE JULIO CÉSAR -->
+
+    <section class="collection">
+
+      <h3 class="collection-title">SERIE JULIO CÉSAR</h3>
+      <div class="collection-line"></div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>ROMA SOY YO</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/719yqLXOmyL._SL1500_.jpg" alt="Roma soy yo">
+          <div class="author">Santiago Posteguillo</div>
+          <p>El joven Julio César se enfrenta a un sistema corrupto en una Roma dominada por la ambición y el poder. Una historia de justicia, valentía y el comienzo de una leyenda.</p>
+          <a class="btn" href="https://link.amazon/B05oCQ5Ur" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+        <div class="card">
+          <h3>MALDITA ROMA</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71BKmvsLHfL._SL1500_.jpg" alt="Maldita Roma">
+          <div class="author">Santiago Posteguillo</div>
+          <p>César lucha por abrirse camino en una Roma llena de conspiraciones, rivalidades y enemigos. Su ambición y talento político y militar lo conducirán hacia un destino extraordinario.</p>
+          <a class="btn" href="https://link.amazon/B05bEJqrp" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+        <div class="card">
+          <h3>LOS TRES MUNDOS</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71UxSzBdasL._SL1500_.jpg" alt="Los tres mundos">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Julio César se lanza a la conquista de las Galias en una epopeya que entrelaza guerras, conspiraciones políticas y destinos enfrentados. Roma, la Galia y Egipto se convierten en escenario de una historia de ambición, poder y conquista.</p>
+          <a class="btn" href="https://link.amazon/B04yWQQmM" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+        <div class="card">
+          <h3>TRILOGÍA DE JULIO CÉSAR</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/7166r4+vLbL._SL1500_.jpg" alt="Trilogía de Julio César">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Descubre el ascenso de Julio César, desde sus primeros pasos en la política romana hasta la conquista de las Galias, en una épica trilogía repleta de intrigas, batallas, ambición y lucha por el poder.</p>
+          <a class="btn" href="https://link.amazon/B0dbpleLU" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRILOGÍA DE TRAJANO -->
+
+    <section class="collection">
+
+      <h3 class="collection-title">TRILOGÍA DE TRAJANO</h3>
+      <div class="collection-line"></div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>LOS ASESINOS DEL EMPERADOR</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61aF5R5hOAL._SL1050_.jpg" alt="Los asesinos del emperador">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Intrigas, conspiraciones, gladiadores y luchas por el poder en una Roma convulsa. Descubre el camino que llevó a Trajano a convertirse en el primer emperador hispano de Roma.</p>
+          <a class="btn" href="https://link.amazon/B01HPeV9r" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+        <div class="card">
+          <h3>CIRCO MÁXIMO</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61TGX2+j6cL._SL1050_.jpg" alt="Circo Máximo">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Trajano gobierna el mayor imperio del mundo, pero las guerras, las conspiraciones y las traiciones amenazan su poder. Una apasionante historia de ambición, lealtad y lucha por Roma.</p>
+          <a class="btn" href="https://link.amazon/B0bU5ZTBd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+        <div class="card">
+          <h3>LA LEGIÓN PERDIDA</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61mHWk2dQTL._SL1050_.jpg" alt="La legión perdida">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Trajano emprende la gran campaña hacia Oriente en busca de la gloria y la conquista. Una épica aventura entre Roma, Partia y tierras lejanas que culmina la trilogía.</p>
+          <a class="btn" href="https://link.amazon/B00Ymm3pQ" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+        <div class="card">
+          <h3>TRILOGÍA DE TRAJANO</h3>
+          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1500_.jpg" alt="Trilogía de Trajano">
+          <div class="author">Santiago Posteguillo</div>
+          <p>Descubre la historia de Trajano, el emperador que llevó Roma a su máxima expansión, a través de una apasionante trilogía repleta de intrigas, guerras y ambición.</p>
+          <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OTROS LIBROS -->
+
+    <section class="collection">
+
+      <h3 class="collection-title">OTROS LIBROS DE ROMA</h3>
+      <div class="collection-line"></div>
+
+      <p class="collection-note">
+        Próximamente incorporaremos más libros y obras sobre la historia de Roma.
+      </p>
+
+    </section>
+
   </div>
 
   <!-- CAMISETAS -->
