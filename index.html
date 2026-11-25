@@ -158,6 +158,8 @@ nav a:hover {
   border: 1px solid #d4af37;
 }
 
+/* TÍTULOS ALINEADOS */
+
 .card h3 {
   font-family: Georgia, serif;
   color: #eee1c7;
@@ -165,6 +167,22 @@ nav a:hover {
   line-height: 1.4;
   margin: 0 0 14px;
   text-align: center;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PORTADAS */
+
+.book-cover {
+  width: 150px;
+  max-width: 100%;
+  height: 330px;
+  object-fit: contain;
+  display: block;
+  margin: 12px auto;
+  border-radius: 7px;
 }
 
 /* AUTOR */
@@ -186,18 +204,7 @@ nav a:hover {
   flex-grow: 1;
 }
 
-/* PORTADAS */
-
-.book-cover {
-  width: 150px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 12px auto;
-  border-radius: 7px;
-}
-
-/* IMÁGENES */
+/* IMÁGENES DE OTRAS CATEGORÍAS */
 
 .photo {
   height: 150px;
@@ -261,6 +268,7 @@ footer {
 /* MÓVILES */
 
 @media(max-width:600px) {
+
   header {
     padding: 20px;
     flex-direction: column;
@@ -358,7 +366,7 @@ footer {
         <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
         <div class="author">Santiago Posteguillo</div>
-        <p>Una apasionante novela sobre Escipión y el ascenso de Roma.</p>
+        <p>La apasionante historia de Publio Cornelio Escipión, el hombre que desafió a Aníbal y cambió el destino de Roma en plena Segunda Guerra Púnica.</p>
         <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
 
@@ -366,7 +374,7 @@ footer {
         <h3>LAS LEGIONES MALDITAS</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
         <div class="author">Santiago Posteguillo</div>
-        <p>Descubre las campañas militares y las grandes historias de las legiones romanas.</p>
+        <p>Roma se juega su supervivencia. Escipión afronta uno de los mayores desafíos militares de su carrera en una epopeya marcada por la guerra, el honor y la venganza.</p>
         <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
 
@@ -374,7 +382,7 @@ footer {
         <h3>LA TRAICIÓN DE ROMA</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
         <div class="author">Santiago Posteguillo</div>
-        <p>Una apasionante historia sobre el poder, la política y los últimos años de Escipión.</p>
+        <p>Última novela de la «Trilogía Africanus», en la que descubriremos el épico final de dos de los personajes más legendarios de la historia: Escipión y Aníbal.</p>
         <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
 
@@ -382,7 +390,7 @@ footer {
         <h3>TRILOGÍA DE TRAJANO</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1000_.jpg" alt="Trilogía de Trajano">
         <div class="author">Santiago Posteguillo</div>
-        <p>Descubre la historia de Roma a través de grandes obras de divulgación histórica.</p>
+        <p>Descubre la historia de Trajano, el emperador que llevó Roma a su máxima expansión, a través de una apasionante trilogía repleta de intrigas, guerras y ambición.</p>
         <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
 
@@ -497,6 +505,7 @@ const contents = document.querySelectorAll(".tab-content");
 
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
+
     tabs.forEach(item => item.classList.remove("active"));
     contents.forEach(content => content.classList.remove("active"));
 
