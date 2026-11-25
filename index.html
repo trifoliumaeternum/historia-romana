@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,22 +6,41 @@
 <title>TRIFOLIUMAETERNUM | Historia y Roma</title>
 
 <style>
+:root {
+  --bg-dark: #11110f;
+  --bg-card: #1b1a17;
+  --border-subtle: #353127;
+  --gold-primary: #c6a56b;
+  --gold-bright: #d4af37;
+  --gold-gradient: linear-gradient(135deg, #c9a44c, #9c762b);
+  --text-light: #eee8dc;
+  --text-muted: #aaa;
+}
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: #11110f;
-  color: #eee8dc;
+  background: var(--bg-dark);
+  color: var(--text-light);
   font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
 }
 
 /* CABECERA */
 
 header {
   padding: 18px 8%;
-  border-bottom: 1px solid #353127;
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +53,7 @@ header {
   gap: 16px;
   font-family: Georgia, serif;
   font-size: 22px;
-  color: #c6a56b;
+  color: var(--gold-primary);
   letter-spacing: 2px;
   font-weight: bold;
 }
@@ -45,7 +63,7 @@ header {
   height: 75px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #c6a56b;
+  border: 2px solid var(--gold-primary);
 }
 
 nav a {
@@ -53,10 +71,11 @@ nav a {
   text-decoration: none;
   margin-left: 22px;
   font-size: 14px;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: #c6a56b;
+  color: var(--gold-primary);
 }
 
 /* PRESENTACIÓN */
@@ -64,21 +83,27 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px 65px;
-  background: linear-gradient(#24100f, #181713, #11110f);
+  background: linear-gradient(#24100f, #181713, var(--bg-dark));
 }
 
 .hero h1 {
   font-family: Georgia, serif;
   font-size: 44px;
-  color: #c6a56b;
+  color: var(--gold-primary);
   margin: 0 0 15px;
 }
 
 .hero p {
-  color: #aaa;
+  color: var(--text-muted);
   max-width: 600px;
   margin: auto;
   line-height: 1.7;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
 }
 
 /* SECCIÓN */
@@ -89,7 +114,7 @@ nav a:hover {
 
 .section h2 {
   font-family: Georgia, serif;
-  color: #c6a56b;
+  color: var(--gold-primary);
   font-size: 28px;
   margin-bottom: 10px;
 }
@@ -109,7 +134,7 @@ nav a:hover {
 }
 
 .tab {
-  background: #1b1a17;
+  background: var(--bg-card);
   color: #d5c5a4;
   border: 1px solid #50432d;
   border-radius: 5px;
@@ -117,16 +142,16 @@ nav a:hover {
   cursor: pointer;
   font-weight: bold;
   font-size: 13px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .tab:hover {
   background: #30271c;
-  border-color: #c6a56b;
+  border-color: var(--gold-primary);
 }
 
 .tab.active {
-  background: linear-gradient(135deg, #c9a44c, #9c762b);
+  background: var(--gold-gradient);
   color: #111;
   border-color: #c9a44c;
 }
@@ -143,7 +168,7 @@ nav a:hover {
 /* TARJETAS */
 
 .card {
-  background: #1b1a17;
+  background: var(--bg-card);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 8px;
   padding: 18px;
@@ -155,7 +180,7 @@ nav a:hover {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(212, 175, 55, 0.18);
-  border: 1px solid #d4af37;
+  border: 1px solid var(--gold-bright);
 }
 
 /* TÍTULOS */
@@ -201,7 +226,7 @@ nav a:hover {
 
 .author {
   text-align: center;
-  color: #c6a56b;
+  color: var(--gold-primary);
   font-size: 14px;
   margin: 5px 0 10px;
 }
@@ -209,7 +234,7 @@ nav a:hover {
 /* DESCRIPCIÓN */
 
 .card p {
-  color: #aaa;
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
   margin: 12px 0;
@@ -235,7 +260,7 @@ nav a:hover {
   display: block;
   text-align: center;
   text-decoration: none;
-  background: linear-gradient(135deg, #c9a44c, #9c762b);
+  background: var(--gold-gradient);
   color: #111 !important;
   padding: 12px;
   border-radius: 6px;
@@ -243,7 +268,7 @@ nav a:hover {
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 1px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .card .btn {
@@ -274,7 +299,7 @@ nav a:hover {
 
 .collection-heading {
   font-family: Georgia, serif;
-  color: #c6a56b;
+  color: var(--gold-primary);
   font-size: 25px;
   text-align: center;
   letter-spacing: 1px;
@@ -285,7 +310,7 @@ nav a:hover {
   width: 100%;
   max-width: 250px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #c6a56b, transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
   margin: 0 auto 25px;
 }
 
@@ -295,15 +320,14 @@ footer {
   text-align: center;
   padding: 35px 20px;
   color: #777;
-  border-top: 1px solid #353127;
+  border-top: 1px solid var(--border-subtle);
   font-size: 13px;
   line-height: 1.7;
 }
 
 /* MÓVILES */
 
-@media(max-width:600px) {
-
+@media (max-width: 600px) {
   header {
     padding: 20px;
     flex-direction: column;
@@ -311,14 +335,14 @@ footer {
   }
 
   .brand {
-    font-size: 15px;
+    font-size: 14px;
     gap: 10px;
     letter-spacing: 1px;
   }
 
   .brand img {
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
   }
 
   nav a {
@@ -359,7 +383,7 @@ footer {
 
 <header>
   <div class="brand">
-    <img src="logo-trifolium.jpg..jpg" alt="Logo de Trifolium Aeternum">
+    <img src="logo-trifolium.jpg" alt="Logo de Trifolium Aeternum">
     <span>TRIFOLIUMAETERNUM</span>
   </div>
 
@@ -385,20 +409,20 @@ footer {
   <h2>Explora nuestras categorías</h2>
   <p class="intro">Encuentra productos inspirados en la antigua Roma.</p>
 
-  <div class="tabs">
-    <button class="tab active" data-tab="libros">📚 Libros</button>
-    <button class="tab" data-tab="camisetas">👕 Camisetas</button>
-    <button class="tab" data-tab="bustos">🏛️ Bustos</button>
-    <button class="tab" data-tab="monedas">🪙 Monedas</button>
-    <button class="tab" data-tab="legiones">🛡️ Legiones</button>
-    <button class="tab" data-tab="gladiadores">⚔️ Gladiadores</button>
-    <button class="tab" data-tab="juegos">🎲 Juegos</button>
-    <button class="tab" data-tab="mapas">🗺️ Mapas y pósteres</button>
+  <div class="tabs" role="tablist" aria-label="Categorías de productos">
+    <button class="tab active" role="tab" aria-selected="true" data-tab="libros">📚 Libros</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="camisetas">👕 Camisetas</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="bustos">🏛️ Bustos</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="monedas">🪙 Monedas</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="legiones">🛡️ Legiones</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="gladiadores">⚔️ Gladiadores</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="juegos">🎲 Juegos</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="mapas">🗺️ Mapas y pósteres</button>
   </div>
 
   <!-- LIBROS -->
 
-  <div class="tab-content active" id="libros">
+  <div class="tab-content active" id="libros" role="tabpanel">
 
     <!-- TRILOGÍA AFRICANUS -->
 
@@ -411,7 +435,7 @@ footer {
 
         <div class="card">
           <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
           <div class="author">Santiago Posteguillo</div>
           <p>La apasionante historia de Publio Cornelio Escipión, el hombre que desafió a Aníbal y cambió el destino de Roma en plena Segunda Guerra Púnica.</p>
           <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -419,7 +443,7 @@ footer {
 
         <div class="card">
           <h3>LAS LEGIONES MALDITAS</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
           <div class="author">Santiago Posteguillo</div>
           <p>Roma se juega su supervivencia. Escipión afronta uno de los mayores desafíos militares de su carrera en una epopeya marcada por la guerra, el honor y la venganza.</p>
           <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -427,7 +451,7 @@ footer {
 
         <div class="card">
           <h3>LA TRAICIÓN DE ROMA</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
           <div class="author">Santiago Posteguillo</div>
           <p>Última novela de la «Trilogía Africanus», en la que descubriremos el épico final de dos de los personajes más legendarios de la historia: Escipión y Aníbal.</p>
           <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -435,7 +459,7 @@ footer {
 
         <div class="card">
           <h3>TRILOGÍA AFRICANUS</h3>
-          <img class="bundle-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81WqID44RPL._SL1500_.jpg" alt="Trilogía Africanus">
+          <img class="bundle-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81WqID44RPL._SL1500_.jpg" alt="Trilogía Africanus">
           <div class="author">Santiago Posteguillo</div>
           <p>Revive la Segunda Guerra Púnica a través de la épica trilogía de Santiago Posteguillo. Desde los primeros pasos de Escipión hasta su enfrentamiento con Aníbal, descubre una de las grandes historias de la antigua Roma.</p>
           <a class="btn" href="https://link.amazon/B0ejEZ1jS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -455,7 +479,7 @@ footer {
 
         <div class="card">
           <h3>ROMA SOY YO</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/719yqLXOmyL._SL1500_.jpg" alt="Roma soy yo">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/719yqLXOmyL._SL1500_.jpg" alt="Roma soy yo">
           <div class="author">Santiago Posteguillo</div>
           <p>El joven Julio César se enfrenta a un sistema corrupto en una Roma dominada por la ambición y el poder. Una historia de justicia, valentía y el comienzo de una leyenda.</p>
           <a class="btn" href="https://link.amazon/B05oCQ5Ur" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -463,7 +487,7 @@ footer {
 
         <div class="card">
           <h3>MALDITA ROMA</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71BKmvsLHfL._SL1500_.jpg" alt="Maldita Roma">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71BKmvsLHfL._SL1500_.jpg" alt="Maldita Roma">
           <div class="author">Santiago Posteguillo</div>
           <p>César lucha por abrirse camino en una Roma llena de conspiraciones, rivalidades y enemigos. Su ambición y talento político y militar lo conducirán hacia un destino extraordinario.</p>
           <a class="btn" href="https://link.amazon/B05bEJqrp" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -471,7 +495,7 @@ footer {
 
         <div class="card">
           <h3>LOS TRES MUNDOS</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71UxSzBdasL._SL1500_.jpg" alt="Los tres mundos">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71UxSzBdasL._SL1500_.jpg" alt="Los tres mundos">
           <div class="author">Santiago Posteguillo</div>
           <p>Julio César se lanza a la conquista de las Galias en una epopeya que entrelaza guerras, conspiraciones políticas y destinos enfrentados. Roma, la Galia y Egipto se convierten en escenario de una historia de ambición, poder y conquista.</p>
           <a class="btn" href="https://link.amazon/B04yWQQmM" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -479,7 +503,7 @@ footer {
 
         <div class="card">
           <h3>TRILOGÍA DE JULIO CÉSAR</h3>
-          <img class="bundle-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/7166r4+vLbL._SL1500_.jpg" alt="Trilogía de Julio César">
+          <img class="bundle-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/7166r4+vLbL._SL1500_.jpg" alt="Trilogía de Julio César">
           <div class="author">Santiago Posteguillo</div>
           <p>Descubre el ascenso de Julio César, desde sus primeros pasos en la política romana hasta la conquista de las Galias, en una épica trilogía repleta de intrigas, batallas, ambición y lucha por el poder.</p>
           <a class="btn" href="https://link.amazon/B0dbpleLU" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -499,7 +523,7 @@ footer {
 
         <div class="card">
           <h3>LOS ASESINOS DEL EMPERADOR</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61aF5R5hOAL._SL1050_.jpg" alt="Los asesinos del emperador">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61aF5R5hOAL._SL1050_.jpg" alt="Los asesinos del emperador">
           <div class="author">Santiago Posteguillo</div>
           <p>Intrigas, conspiraciones, gladiadores y luchas por el poder en una Roma convulsa. Descubre el camino que llevó a Trajano a convertirse en el primer emperador hispano de Roma.</p>
           <a class="btn" href="https://link.amazon/B01HPeV9r" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -507,7 +531,7 @@ footer {
 
         <div class="card">
           <h3>CIRCO MÁXIMO</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61TGX2+j6cL._SL1050_.jpg" alt="Circo Máximo">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61TGX2+j6cL._SL1050_.jpg" alt="Circo Máximo">
           <div class="author">Santiago Posteguillo</div>
           <p>Trajano gobierna el mayor imperio del mundo, pero las guerras, las conspiraciones y las traiciones amenazan su poder. Una apasionante historia de ambición, lealtad y lucha por Roma.</p>
           <a class="btn" href="https://link.amazon/B0bU5ZTBd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -515,7 +539,7 @@ footer {
 
         <div class="card">
           <h3>LA LEGIÓN PERDIDA</h3>
-          <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61mHWk2dQTL._SL1050_.jpg" alt="La legión perdida">
+          <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61mHWk2dQTL._SL1050_.jpg" alt="La legión perdida">
           <div class="author">Santiago Posteguillo</div>
           <p>Trajano emprende la gran campaña hacia Oriente en busca de la gloria y la conquista. Una épica aventura entre Roma, Partia y tierras lejanas que culmina la trilogía.</p>
           <a class="btn" href="https://link.amazon/B00Ymm3pQ" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -523,7 +547,7 @@ footer {
 
         <div class="card">
           <h3>TRILOGÍA DE TRAJANO</h3>
-          <img class="bundle-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1500_.jpg" alt="Trilogía de Trajano">
+          <img class="bundle-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1500_.jpg" alt="Trilogía de Trajano">
           <div class="author">Santiago Posteguillo</div>
           <p>Descubre la historia de Trajano, el emperador que llevó Roma a su máxima expansión, a través de una apasionante trilogía repleta de intrigas, guerras y ambición.</p>
           <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
@@ -549,7 +573,7 @@ footer {
 
   <!-- CAMISETAS -->
 
-  <div class="tab-content" id="camisetas">
+  <div class="tab-content" id="camisetas" role="tabpanel">
 
     <div class="grid">
 
@@ -557,7 +581,7 @@ footer {
 
       <div class="card">
         <h3>ROMA INVICTA SPQR – ÁGUILA ROMANA</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91uFmAHcGCL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma Invicta SPQR con águila romana">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91uFmAHcGCL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma Invicta SPQR con águila romana">
         <p>Luce el símbolo de la grandeza de Roma con esta camiseta inspirada en el águila imperial y el lema SPQR. Un diseño de estética envejecida que rinde homenaje a las legiones, el poder y el legado de la antigua Roma.</p>
         <a class="btn" href="https://link.amazon/B0h6DzoUt" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -566,7 +590,7 @@ footer {
 
       <div class="card">
         <h3>ROMA SPQR – SÍMBOLO DEL IMPERIO ROMANO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1-Xr2RqOqL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma SPQR símbolo romano">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1-Xr2RqOqL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma SPQR símbolo romano">
         <p>Una camiseta inspirada en el emblemático símbolo SPQR, representación del poder y la identidad de la antigua Roma. Ideal para los apasionados de la historia romana y su legado.</p>
         <a class="btn" href="https://link.amazon/B03FUXMJd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -575,7 +599,7 @@ footer {
 
       <div class="card">
         <h3>SPQR – LEGIONARIO DEL EJÉRCITO ROMANO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91I2KKVyEKL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta SPQR legionario del ejército romano">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91I2KKVyEKL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta SPQR legionario del ejército romano">
         <p>Una camiseta inspirada en los legionarios que defendieron las fronteras de Roma y forjaron la grandeza del Imperio. Un diseño dedicado al ejército romano y al emblemático símbolo SPQR.</p>
         <a class="btn" href="https://link.amazon/B06wDVzr0" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -584,7 +608,7 @@ footer {
 
       <div class="card">
         <h3>ROMA ANTIGUA SPQR</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B15-AXSctvL._CLa%7C2140%2C2000%7C81OfhlsNylL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma Antigua SPQR">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B15-AXSctvL._CLa%7C2140%2C2000%7C81OfhlsNylL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma Antigua SPQR">
         <p>Una camiseta inspirada en la antigua Roma y en el histórico emblema SPQR, símbolo de la identidad y el poder del pueblo romano. Una propuesta para los amantes de la historia y la civilización romana.</p>
         <a class="btn" href="https://link.amazon/B0d8EF76C" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -593,25 +617,25 @@ footer {
 
       <div class="card">
         <h3>LEGIONARIO ROMANO SPQR</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1fRqw30NVL._CLa%7C2140%2C2000%7C91aZ-3hVtUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Legionario romano SPQR">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1fRqw30NVL._CLa%7C2140%2C2000%7C91aZ-3hVtUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Legionario romano SPQR">
         <p>Una camiseta dedicada al legionario romano y al emblemático símbolo SPQR. Inspirada en los soldados que defendieron las fronteras de Roma y contribuyeron a construir uno de los mayores imperios de la historia.</p>
         <a class="btn" href="https://link.amazon/B06fHQFpB" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
 
-         <!-- CAMISETA 6 -->
+      <!-- CAMISETA 6 -->
 
       <div class="card">
         <h3>SÍMBOLO DEL IMPERIO ROMANO SPQR</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91Wljy48z7L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Símbolo del Imperio Romano SPQR">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91Wljy48z7L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Símbolo del Imperio Romano SPQR">
         <p>Una camiseta inspirada en el símbolo SPQR, emblema de la identidad y el poder de la antigua Roma. Un diseño para quienes sienten pasión por la historia, las legiones y el legado del Imperio Romano.</p>
         <a class="btn" href="https://link.amazon/B07jRxrvt" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
 
-         <!-- CAMISETA 7 -->
+      <!-- CAMISETA 7 -->
 
       <div class="card">
         <h3>LA HISTORIA DE ROMA – DESDE SU FUNDACIÓN HASTA SU CAÍDA</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91rUFSAwV3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta La historia de Roma">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91rUFSAwV3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta La historia de Roma">
         <p>Una camiseta dedicada a la historia de Roma, desde la legendaria fundación de la ciudad hasta la caída del Imperio romano. Un diseño para los apasionados de la civilización que marcó la historia de Occidente.</p>
         <a class="btn" href="https://link.amazon/B0dyNSwu7" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -620,7 +644,7 @@ footer {
 
       <div class="card">
         <h3>CANNAE – ANTIGUA BATALLA ENTRE ROMA Y CARTAGO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91moSGHsHtL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cannae Antigua Batalla Roma Cartago">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91moSGHsHtL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cannae Antigua Batalla Roma Cartago">
         <p>Una camiseta inspirada en la batalla de Cannas, uno de los enfrentamientos más célebres de las guerras púnicas. Un homenaje a la lucha entre Roma y Cartago y a uno de los episodios militares más decisivos de la Antigüedad.</p>
         <a class="btn" href="https://link.amazon/B0aWcZXkn" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -629,7 +653,7 @@ footer {
 
       <div class="card">
         <h3>BATALLA DE ZAMA – ROMA CONTRA CARTAGO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91s%2BvZm-zML.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Batalla de Zama Roma contra Cartago">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91s%2BvZm-zML.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Batalla de Zama Roma contra Cartago">
         <p>Una camiseta inspirada en la batalla de Zama, el enfrentamiento decisivo de la Segunda Guerra Púnica. Un homenaje a la victoria de Escipión el Africano sobre Aníbal y al triunfo de Roma frente a Cartago.</p>
         <a class="btn" href="https://link.amazon/B02rqkm5C" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -638,7 +662,7 @@ footer {
 
       <div class="card">
         <h3>CARTAGO ANTIGUA – SÍMBOLO DE TANIT</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1ieKaTDQdL._CLa%7C2140%2C2000%7C81ZYG4LTNzL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cartago antigua Tanit">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1ieKaTDQdL._CLa%7C2140%2C2000%7C81ZYG4LTNzL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cartago antigua Tanit">
         <p>Una camiseta inspirada en la antigua civilización cartaginesa y en Tanit, una de sus principales divinidades. Un diseño dedicado a la cultura, la religión y el legado histórico de Cartago.</p>
         <a class="btn" href="https://link.amazon/B0cHx4hzP" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -647,7 +671,7 @@ footer {
 
       <div class="card">
         <h3>CARTAGO – ANÍBAL Y LA SEGUNDA GUERRA PÚNICA</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C81Y%2BYNieRAL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cartago Aníbal y Segunda Guerra Púnica">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C81Y%2BYNieRAL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cartago Aníbal y Segunda Guerra Púnica">
         <p>Una camiseta inspirada en Aníbal Barca y sus campañas militares contra Roma durante la Segunda Guerra Púnica. Un homenaje al legendario general cartaginés y a uno de los mayores enfrentamientos de la historia antigua.</p>
         <a class="btn" href="https://link.amazon/B0aYeAg8K" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -656,7 +680,7 @@ footer {
 
       <div class="card">
         <h3>ANÍBAL BARCA – GENERAL DE CARTAGO</h3>
-        <img class="book-cover" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C913ZxMx9%2B3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Aníbal Barca y Cartago">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C913ZxMx9%2B3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Aníbal Barca y Cartago">
         <p>Una camiseta dedicada a Aníbal Barca, uno de los estrategas militares más célebres de la Antigüedad. Inspirada en sus campañas durante las guerras púnicas y en su legendario enfrentamiento contra la República romana.</p>
         <a class="btn" href="https://link.amazon/B0a1iawR6" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -666,7 +690,7 @@ footer {
 
   <!-- BUSTOS -->
 
-  <div class="tab-content" id="bustos">
+  <div class="tab-content" id="bustos" role="tabpanel">
     <div class="grid">
       <div class="card">
         <div class="photo">🏛️</div>
@@ -679,7 +703,7 @@ footer {
 
   <!-- MONEDAS -->
 
-  <div class="tab-content" id="monedas">
+  <div class="tab-content" id="monedas" role="tabpanel">
     <div class="grid">
       <div class="card">
         <div class="photo">🪙</div>
@@ -692,7 +716,7 @@ footer {
 
   <!-- LEGIONES -->
 
-  <div class="tab-content" id="legiones">
+  <div class="tab-content" id="legiones" role="tabpanel">
     <div class="grid">
       <div class="card">
         <div class="photo">🛡️</div>
@@ -705,7 +729,7 @@ footer {
 
   <!-- GLADIADORES -->
 
-  <div class="tab-content" id="gladiadores">
+  <div class="tab-content" id="gladiadores" role="tabpanel">
     <div class="grid">
       <div class="card">
         <div class="photo">⚔️</div>
@@ -718,7 +742,7 @@ footer {
 
   <!-- JUEGOS -->
 
-  <div class="tab-content" id="juegos">
+  <div class="tab-content" id="juegos" role="tabpanel">
     <div class="grid">
       <div class="card">
         <div class="photo">🎲</div>
@@ -731,7 +755,7 @@ footer {
 
   <!-- MAPAS -->
 
-  <div class="tab-content" id="mapas">
+  <div class="tab-content" id="mapas" role="tabpanel">
     <div class="grid">
       <div class="card">
         <div class="photo">🗺️</div>
@@ -759,11 +783,15 @@ const contents = document.querySelectorAll(".tab-content");
 
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
+    tabs.forEach(item => {
+      item.classList.remove("active");
+      item.setAttribute("aria-selected", "false");
+    });
 
-    tabs.forEach(item => item.classList.remove("active"));
     contents.forEach(content => content.classList.remove("active"));
 
     tab.classList.add("active");
+    tab.setAttribute("aria-selected", "true");
 
     const selected = document.getElementById(tab.dataset.tab);
 
