@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -146,6 +147,8 @@ nav a:hover {
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 8px;
   padding: 18px;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
@@ -161,13 +164,26 @@ nav a:hover {
   font-size: 18px;
   line-height: 1.4;
   margin: 0 0 14px;
+  text-align: center;
 }
+
+/* AUTOR */
+
+.author {
+  text-align: center;
+  color: #c6a56b;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+/* DESCRIPCIÓN */
 
 .card p {
   color: #aaa;
   font-size: 14px;
   line-height: 1.6;
   margin: 12px 0;
+  flex-grow: 1;
 }
 
 /* PORTADAS */
@@ -209,6 +225,10 @@ nav a:hover {
   font-size: 13px;
   letter-spacing: 1px;
   transition: .3s;
+}
+
+.card .btn {
+  margin-top: auto;
 }
 
 .btn:hover {
@@ -337,6 +357,7 @@ footer {
       <div class="card">
         <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
+        <div class="author">Santiago Posteguillo</div>
         <p>Una apasionante novela sobre Escipión y el ascenso de Roma.</p>
         <a class="btn" href="https://link.amazon/B040Picy9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -344,6 +365,7 @@ footer {
       <div class="card">
         <h3>LAS LEGIONES MALDITAS</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91OvQ5qrkgL._SL1500_.jpg" alt="Las legiones malditas">
+        <div class="author">Santiago Posteguillo</div>
         <p>Descubre las campañas militares y las grandes historias de las legiones romanas.</p>
         <a class="btn" href="https://link.amazon/B03vghnu5" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -351,6 +373,7 @@ footer {
       <div class="card">
         <h3>LA TRAICIÓN DE ROMA</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91c74AzLnmL._SL1500_.jpg" alt="La traición de Roma">
+        <div class="author">Santiago Posteguillo</div>
         <p>Una apasionante historia sobre el poder, la política y los últimos años de Escipión.</p>
         <a class="btn" href="https://link.amazon/B0gfh0Anc" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
@@ -358,6 +381,7 @@ footer {
       <div class="card">
         <h3>TRILOGÍA DE TRAJANO</h3>
         <img class="book-cover" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/613vJwYoWKL._SL1000_.jpg" alt="Trilogía de Trajano">
+        <div class="author">Santiago Posteguillo</div>
         <p>Descubre la historia de Roma a través de grandes obras de divulgación histórica.</p>
         <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
       </div>
