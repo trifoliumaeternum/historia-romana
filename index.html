@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -184,7 +185,7 @@ nav a:hover {
   border-radius: 7px;
 }
 
-/* IMÁGENES DE RECOPILATORIOS */
+/* RECOPILATORIOS */
 
 .bundle-cover {
   width: 125px;
@@ -194,7 +195,8 @@ nav a:hover {
   display: block;
   margin: 10px auto;
   border-radius: 7px;
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
+  filter: brightness(1.35) contrast(1.15);
 }
 
 /* AUTOR */
@@ -256,7 +258,7 @@ nav a:hover {
   box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
 }
 
-/* PESTAÑAS CONTENIDO */
+/* CONTENIDO DE PESTAÑAS */
 
 .tab-content {
   display: none;
@@ -264,6 +266,29 @@ nav a:hover {
 
 .tab-content.active {
   display: block;
+}
+
+/* COLECCIONES */
+
+.collection {
+  margin: 0 0 48px;
+}
+
+.collection-heading {
+  font-family: Georgia, serif;
+  color: #c6a56b;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 5px 0 10px;
+}
+
+.collection-line {
+  width: 100%;
+  max-width: 250px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c6a56b, transparent);
+  margin: 0 auto 25px;
 }
 
 /* PIE */
@@ -326,29 +351,6 @@ footer {
   .collection-heading {
     font-size: 22px;
   }
-}
-
-/* ORGANIZACIÓN POR COLECCIONES */
-
-.collection {
-  margin: 0 0 48px;
-}
-
-.collection-heading {
-  font-family: Georgia, serif;
-  color: #c6a56b;
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 1px;
-  margin: 5px 0 10px;
-}
-
-.collection-line {
-  width: 100%;
-  max-width: 250px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c6a56b, transparent);
-  margin: 0 auto 25px;
 }
 </style>
 </head>
