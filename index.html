@@ -374,6 +374,70 @@ footer {
     font-size: 22px;
   }
 }
+  /* MEJORA EXCLUSIVA DEL APARTADO DE CAMISETAS */
+
+#camisetas .grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 22px;
+}
+
+#camisetas .card {
+  min-width: 0;
+  height: 100%;
+  padding: 18px;
+}
+
+#camisetas .card h3 {
+  min-height: 76px;
+  font-size: 16px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+#camisetas .card .book-cover {
+  width: 100%;
+  max-width: 100%;
+  height: 205px;
+  object-fit: contain;
+  margin: 8px auto 12px;
+  border-radius: 5px;
+}
+
+#camisetas .card p {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+  #camisetas .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* MÓVILES */
+@media (max-width: 600px) {
+  #camisetas .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  #camisetas .card {
+    padding: 16px;
+  }
+
+  #camisetas .card h3 {
+    min-height: 0;
+    font-size: 17px;
+  }
+
+  #camisetas .card .book-cover {
+    height: 220px;
+  }
+}
 </style>
 </head>
 
