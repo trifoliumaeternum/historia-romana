@@ -518,6 +518,46 @@ footer {
     height: 300px;
   }
 }
+
+  /* ...resto de tu CSS... */
+
+
+/* CORRECCIÓN DEFINITIVA DE LA CUADRÍCULA DE COLECCIÓN */
+
+#Colección {
+  width: 100% !important;
+}
+
+#Colección .grid {
+  display: grid !important;
+  width: 100% !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  justify-content: stretch !important;
+  align-items: stretch !important;
+  gap: 22px !important;
+}
+
+#Colección .grid > .card {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+  #Colección .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* MÓVILES */
+@media (max-width: 600px) {
+  #Colección .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+</style>
 </style>
 </head>
 
