@@ -7,13 +7,13 @@
 <style>
 :root {
   --bg-dark: #11110f;
-  --bg-card: #1b1a17;
+  --bg-card: #1b1a18;
   --border-subtle: #353127;
   --gold-primary: #c6a56b;
   --gold-bright: #d4af37;
   --gold-gradient: linear-gradient(135deg, #c9a44c, #9c762b);
   --text-light: #eee8dc;
-  --text-muted: #aaa;
+  --text-muted: #c0bdba;
 }
 
 * {
@@ -93,7 +93,7 @@ nav a:hover {
 }
 
 .hero p {
-  color: var(--text-muted);
+  color: #aaa;
   max-width: 600px;
   margin: auto;
   line-height: 1.7;
@@ -155,135 +155,11 @@ nav a:hover {
   border-color: #c9a44c;
 }
 
-/* CUADRÍCULA GENERAL */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 280px));
-  justify-content: center;
-  gap: 24px;
-}
-
-/* TARJETAS */
-
-.card {
-  background: var(--bg-card);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  border-radius: 8px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.18);
-  border: 1px solid var(--gold-bright);
-}
-
-/* TÍTULOS */
-
-.card h3 {
-  font-family: Georgia, serif;
-  color: #eee1c7;
-  font-size: 18px;
-  line-height: 1.4;
-  margin: 0 0 5px;
-  text-align: center;
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* PORTADAS INDIVIDUALES */
-
-.book-cover {
-  width: 150px;
-  max-width: 100%;
-  height: 230px;
-  object-fit: contain;
-  display: block;
-  margin: 5px auto;
-  border-radius: 7px;
-}
-
-/* RECOPILATORIOS */
-
-.bundle-cover {
-  width: 125px;
-  max-width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  margin: 10px auto;
-  border-radius: 7px;
-}
-
-/* AUTOR */
-
-.author {
-  text-align: center;
-  color: var(--gold-primary);
-  font-size: 14px;
-  margin: 5px 0 10px;
-}
-
-/* DESCRIPCIÓN */
-
-.card p {
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 12px 0;
-  flex-grow: 1;
-}
-
-/* IMÁGENES DE OTRAS CATEGORÍAS */
-
-.photo {
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, #30271c, #171613);
-  font-size: 65px;
-  border-radius: 5px;
-  margin-bottom: 18px;
-}
-
-/* BOTONES */
-
-.btn {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  background: var(--gold-gradient);
-  color: #111 !important;
-  padding: 12px;
-  border-radius: 6px;
-  margin-top: 16px;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-.card .btn {
-  margin-top: auto;
-}
-
-.btn:hover {
-  background: #e5c36b;
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
-}
-
 /* CONTENIDO DE PESTAÑAS */
 
 .tab-content {
   display: none;
+  width: 100%;
 }
 
 .tab-content.active {
@@ -313,45 +189,10 @@ nav a:hover {
   margin: 0 auto 25px;
 }
 
-/* APARTADO DE CAMISETAS */
+/* CUADRÍCULA UNIFICADA PARA TODAS LAS CATEGORÍAS */
 
-#camisetas .grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  justify-content: stretch;
-  align-items: stretch;
-  gap: 22px;
-}
-
-#camisetas .card {
-  min-width: 0;
-  height: 100%;
-  padding: 18px;
-}
-
-#camisetas .card h3 {
-  min-height: 76px;
-  font-size: 16px;
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-
-#camisetas .card .book-cover {
-  width: 100%;
-  height: 205px;
-  object-fit: contain;
-  margin: 8px auto 12px;
-  border-radius: 5px;
-}
-
-#camisetas .card p {
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-/* APARTADO DE COLECCIÓN Y VESTIMENTA (IMÁGENES MEJORADAS) */
-
-#coleccion .grid,
-#vestimenta .grid {
+.grid {
+  display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(235px, 270px));
   justify-content: center;
@@ -359,29 +200,35 @@ nav a:hover {
   gap: 20px;
 }
 
-#coleccion .card,
-#vestimenta .card {
+/* TARJETAS UNIFICADAS */
+
+.card {
   width: 100%;
   min-width: 0;
-  max-width: none;
-  padding: 18px;
+  background: var(--bg-card);
   border: 1px solid rgba(190, 151, 67, 0.25);
   border-radius: 9px;
-  background: #1b1a18;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-#coleccion .card:hover,
-#vestimenta .card:hover {
-  border-color: #b99545;
+.card:hover {
+  border-color: var(--gold-bright);
   transform: translateY(-4px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
 }
 
-#coleccion .card .book-cover,
-#vestimenta .card .book-cover {
+/* IMÁGENES EN VITRINA UNIFORME (LIBROS, CAMISETAS, COLECCIÓN, VESTIMENTA Y JUEGOS) */
+
+.book-cover,
+.bundle-cover,
+.card img {
+  display: block;
   width: 100%;
   max-width: 100%;
-  height: 210px;
+  height: 215px;
   object-fit: contain;
   background-color: #ffffff;
   padding: 14px;
@@ -391,25 +238,89 @@ nav a:hover {
   transition: transform 0.25s ease;
 }
 
-#coleccion .card:hover .book-cover,
-#vestimenta .card:hover .book-cover {
+/* CONTENEDOR DE ICONO PARA JUEGOS (MISMA ALTURA Y ESTILO) */
+
+.photo {
+  height: 215px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #30271c, #171613);
+  font-size: 65px;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  margin: 0 auto 14px;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .book-cover,
+.card:hover .bundle-cover,
+.card:hover img,
+.card:hover .photo {
   transform: scale(1.03);
 }
 
-#coleccion .card h3,
-#vestimenta .card h3 {
-  min-height: 52px;
+/* TÍTULOS DE TARJETA */
+
+.card h3 {
+  font-family: Georgia, serif;
+  color: #eee1c7;
+  font-size: 16px;
+  line-height: 1.35;
   margin: 4px 0 10px;
   text-align: center;
-  line-height: 1.35;
-  font-size: 16px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#coleccion .card p,
-#vestimenta .card p {
+/* AUTOR (PARA LIBROS) */
+
+.author {
+  text-align: center;
+  color: var(--gold-primary);
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+/* DESCRIPCIÓN */
+
+.card p {
+  color: var(--text-muted);
   font-size: 13px;
   line-height: 1.6;
-  color: #c0bdba;
+  margin: 6px 0 14px;
+  flex-grow: 1;
+}
+
+/* BOTONES */
+
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--gold-gradient);
+  color: #111 !important;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 16px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.card .btn {
+  margin-top: auto;
+}
+
+.btn:hover {
+  background: #e5c36b;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
 }
 
 /* PIE */
@@ -421,15 +332,6 @@ footer {
   border-top: 1px solid var(--border-subtle);
   font-size: 13px;
   line-height: 1.7;
-}
-
-/* TABLETS */
-
-@media (max-width: 1000px) {
-  #camisetas .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
 }
 
 /* MÓVILES */
@@ -477,25 +379,24 @@ footer {
     font-size: 22px;
   }
 
-  #camisetas .grid,
-  #coleccion .grid,
-  #vestimenta .grid {
+  .grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
-  #camisetas .card {
+  .card {
     padding: 16px;
   }
 
-  #camisetas .card h3 {
+  .card h3 {
     min-height: 0;
     font-size: 17px;
   }
 
-  #camisetas .card .book-cover,
-  #coleccion .card .book-cover,
-  #vestimenta .card .book-cover {
+  .book-cover,
+  .bundle-cover,
+  .card img,
+  .photo {
     height: 220px;
   }
 }
