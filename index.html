@@ -190,7 +190,7 @@ nav a:hover {
 .affiliate-note {
   margin-top: 28px;
   font-size: 12px;
-  color: #8c857b;
+  color: #a8a094;
 }
 
 /* SECCIÓN */
@@ -208,7 +208,35 @@ nav a:hover {
 
 .intro {
   color: #999;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+/* BUSCADOR RÁPIDO */
+
+.search-box {
+  margin: 20px 0 10px;
+  max-width: 440px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg-card);
+  border: 1px solid #50432d;
+  border-radius: 6px;
+  color: var(--text-light);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-box input::placeholder {
+  color: #888;
+}
+
+.search-box input:focus {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
 }
 
 /* PESTAÑAS */
@@ -540,8 +568,8 @@ footer {
   <p>Selección oficial de libros, camisetas, réplicas y objetos históricos recomendados en nuestro canal para apasionados de la Antigua Roma.</p>
   
   <div class="hero-actions">
-    <a class="btn-outline" href="#categorias">EXPLORAR SELECCIÓN</a>
-    <a class="btn" href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">VER CANAL DE YOUTUBE</a>
+    <a class="btn" href="#categorias">EXPLORAR SELECCIÓN</a>
+    <a class="btn-outline" href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">VER CANAL DE YOUTUBE</a>
   </div>
 
   <div class="affiliate-note">
@@ -555,6 +583,10 @@ footer {
 
   <h2>Explora nuestras categorías</h2>
   <p class="intro">Encuentra productos inspirados en la antigua Roma.</p>
+
+  <div class="search-box">
+    <input type="search" id="searchInput" placeholder="🔍 Buscar libros, emperadores, camisetas, llaveros..." aria-label="Buscar productos">
+  </div>
 
   <div class="tabs" role="tablist" aria-label="Categorías de productos">
     <button class="tab active" role="tab" aria-selected="true" data-tab="libros">📚 Libros</button>
@@ -1449,9 +1481,14 @@ footer {
 <script>
 const tabs = document.querySelectorAll(".tab");
 const contents = document.querySelectorAll(".tab-content");
+const searchInput = document.getElementById("searchInput");
 
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
+    searchInput.value = "";
+    document.querySelectorAll(".card").forEach(card => card.style.display = "");
+    document.querySelectorAll(".collection").forEach(col => col.style.display = "");
+
     tabs.forEach(item => {
       item.classList.remove("active");
       item.setAttribute("aria-selected", "false");
@@ -1463,10 +1500,27 @@ tabs.forEach(tab => {
     tab.setAttribute("aria-selected", "true");
 
     const selected = document.getElementById(tab.dataset.tab);
-
     if (selected) {
       selected.classList.add("active");
     }
+  });
+});
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase().trim();
+  const activeTab = document.querySelector(".tab-content.active");
+  if (!activeTab) return;
+
+  const cards = activeTab.querySelectorAll(".card");
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? "" : "none";
+  });
+
+  const collections = activeTab.querySelectorAll(".collection");
+  collections.forEach(col => {
+    const visibleCards = col.querySelectorAll(".card:not([style*='display: none'])");
+    col.style.display = (query !== "" && visibleCards.length === 0) ? "none" : "";
   });
 });
 </script>
