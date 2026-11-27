@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRIFOLIUMAETERNUM | Historia y Roma</title>
+
 <style>
 :root {
   --bg-dark: #11110f;
@@ -38,8 +39,13 @@ h1, h2, h3 {
 /* CABECERA */
 
 header {
-  padding: 18px 8%;
-  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 8%;
+  background: rgba(17, 17, 15, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,60 +55,142 @@ header {
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   font-family: Georgia, serif;
-  font-size: 22px;
-  color: var(--gold-primary);
-  letter-spacing: 2px;
+  font-size: 20px;
+  color: #e5c158;
+  letter-spacing: 2.5px;
   font-weight: bold;
 }
 
 .brand img {
-  width: 75px;
-  height: 75px;
+  width: 56px;
+  height: 56px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid var(--gold-primary);
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
 }
 
 nav a {
   color: #ddd;
   text-decoration: none;
-  margin-left: 22px;
+  margin-left: 24px;
   font-size: 14px;
   transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--gold-primary);
+  color: #e5c158;
 }
 
-/* PRESENTACIÓN */
+/* PORTADA INSPIRADA EN EL LOGO IMPERIAL */
 
 .hero {
+  position: relative;
   text-align: center;
-  padding: 80px 20px 65px;
-  background: linear-gradient(#24100f, #181713, var(--bg-dark));
+  padding: 75px 20px 80px;
+  background: 
+    radial-gradient(circle at 50% 28%, rgba(212, 175, 55, 0.22) 0%, rgba(61, 14, 13, 0.55) 42%, rgba(17, 17, 15, 0.98) 85%),
+    linear-gradient(180deg, #2b0b0a 0%, #171412 80%, var(--bg-dark) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-emblem {
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35), 0 10px 25px rgba(0, 0, 0, 0.7);
+  margin: 0 auto 22px;
+  display: block;
+}
+
+.hero-subtitle {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #e5c158;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .hero h1 {
   font-family: Georgia, serif;
-  font-size: 44px;
-  color: var(--gold-primary);
-  margin: 0 0 15px;
+  font-size: clamp(34px, 5vw, 54px);
+  color: #f6e7c6;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.75);
+  letter-spacing: 1.5px;
+  margin: 0 auto 16px;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: 320px;
+  margin: 0 auto 22px;
+  color: #d4af37;
+  font-size: 14px;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 .hero p {
-  color: #aaa;
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.7;
+  color: #d0cabf;
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .hero .btn {
   display: inline-block;
+  margin-top: 0;
+  padding: 15px 30px;
+}
+
+.btn-outline {
+  display: inline-block;
+  text-decoration: none;
+  color: #e5c158;
+  border: 1px solid #d4af37;
+  background: rgba(212, 175, 55, 0.08);
+  padding: 15px 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.affiliate-note {
   margin-top: 28px;
-  padding: 14px 28px;
+  font-size: 12px;
+  color: #8c857b;
 }
 
 /* SECCIÓN */
@@ -362,16 +450,21 @@ footer {
   }
 
   .brand img {
-    width: 54px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
   }
 
   nav a {
     margin: 0 8px;
   }
 
-  .hero h1 {
-    font-size: 34px;
+  .hero {
+    padding: 55px 18px 65px;
+  }
+
+  .hero-emblem {
+    width: 110px;
+    height: 110px;
   }
 
   .section {
@@ -418,7 +511,6 @@ footer {
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -427,7 +519,7 @@ footer {
 
 <header>
   <div class="brand">
-    <img src="logo-trifolium.jpg" alt="Logo de Trifolium Aeternum">
+    <img src="logo-trifolium.jpg.jpg" alt="Logo de Trifolium Aeternum">
     <span>TRIFOLIUMAETERNUM</span>
   </div>
 
@@ -441,9 +533,20 @@ footer {
 <!-- PRESENTACIÓN -->
 
 <section class="hero" id="inicio">
+  <img class="hero-emblem" src="logo-trifolium.jpg.jpg" alt="Emblema Trifolium Aeternum">
+  <span class="hero-subtitle">TRIFOLIUM AETERNUM · HISTORIA Y ROMA</span>
   <h1>El legado de Roma</h1>
-  <p>Descubre libros, objetos, recreaciones y curiosidades para quienes sienten pasión por la historia del Imperio Romano.</p>
-  <a class="btn" href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">VISITA NUESTRO CANAL DE YOUTUBE</a>
+  <div class="hero-divider">✦</div>
+  <p>Selección oficial de libros, camisetas, réplicas y objetos históricos recomendados en nuestro canal para apasionados de la Antigua Roma.</p>
+  
+  <div class="hero-actions">
+    <a class="btn-outline" href="#categorias">EXPLORAR SELECCIÓN</a>
+    <a class="btn" href="https://www.youtube.com/@TrifoliumAeternum" target="_blank" rel="noopener noreferrer">VER CANAL DE YOUTUBE</a>
+  </div>
+
+  <div class="affiliate-note">
+    En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos.
+  </div>
 </section>
 
 <!-- CATEGORÍAS -->
