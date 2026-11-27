@@ -156,7 +156,7 @@ nav a:hover {
   border-color: #c9a44c;
 }
 
-/* CUADRÍCULA */
+/* CUADRÍCULA GENERAL */
 
 .grid {
   display: grid;
@@ -210,7 +210,7 @@ nav a:hover {
   border-radius: 7px;
 }
 
-/* RECOPILATORIOS SIN FILTROS */
+/* RECOPILATORIOS */
 
 .bundle-cover {
   width: 125px;
@@ -314,6 +314,91 @@ nav a:hover {
   margin: 0 auto 25px;
 }
 
+/* APARTADO DE CAMISETAS */
+
+#camisetas .grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 22px;
+}
+
+#camisetas .card {
+  min-width: 0;
+  height: 100%;
+  padding: 18px;
+}
+
+#camisetas .card h3 {
+  min-height: 76px;
+  font-size: 16px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+#camisetas .card .book-cover {
+  width: 100%;
+  height: 205px;
+  object-fit: contain;
+  margin: 8px auto 12px;
+  border-radius: 5px;
+}
+
+#camisetas .card p {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* APARTADO DE COLECCIÓN */
+
+#coleccion {
+  width: 100%;
+}
+
+#coleccion .grid {
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 18px;
+}
+
+#coleccion .grid > .card {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  padding: 20px;
+  border: 1px solid rgba(190, 151, 67, 0.25);
+  border-radius: 9px;
+  background: #1b1a18;
+}
+
+#coleccion .grid > .card:hover {
+  border-color: #b99545;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+#coleccion .grid > .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+#coleccion .grid > .card h3 {
+  min-height: 48px;
+  margin: 4px 0 14px;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+#coleccion .grid > .card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #c0bdba;
+}
+
 /* PIE */
 
 footer {
@@ -323,6 +408,16 @@ footer {
   border-top: 1px solid var(--border-subtle);
   font-size: 13px;
   line-height: 1.7;
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+  #camisetas .grid,
+  #coleccion .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
 }
 
 /* MÓVILES */
@@ -366,62 +461,13 @@ footer {
     font-size: 12px;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 280px));
-  }
-
   .collection-heading {
     font-size: 22px;
   }
-}
-  /* MEJORA EXCLUSIVA DEL APARTADO DE CAMISETAS */
 
-#camisetas .grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  justify-content: stretch;
-  align-items: stretch;
-  gap: 22px;
-}
-
-#camisetas .card {
-  min-width: 0;
-  height: 100%;
-  padding: 18px;
-}
-
-#camisetas .card h3 {
-  min-height: 76px;
-  font-size: 16px;
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-
-#camisetas .card .book-cover {
-  width: 100%;
-  max-width: 100%;
-  height: 205px;
-  object-fit: contain;
-  margin: 8px auto 12px;
-  border-radius: 5px;
-}
-
-#camisetas .card p {
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-/* TABLETS */
-@media (max-width: 1000px) {
-  #camisetas .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
-}
-
-/* MÓVILES */
-@media (max-width: 600px) {
-  #camisetas .grid {
-    grid-template-columns: minmax(0, 1fr);
+  #camisetas .grid,
+  #coleccion .grid {
+    grid-template-columns: 1fr;
     gap: 18px;
   }
 
@@ -438,193 +484,6 @@ footer {
     height: 220px;
   }
 }
-  /* APARTADO DE COLECCIÓN */
-
-#Colección .grid {
-  grid-template-columns: minmax(280px, 420px);
-  justify-content: center;
-}
-
-#Colección .busto-card {
-  width: 100%;
-  padding: 25px;
-}
-
-#Colección .busto-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-#Colección .busto-image-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-#Colección .busto-main-image {
-  display: block;
-  width: 100%;
-  max-width: 340px;
-  height: 340px;
-  object-fit: contain;
-  margin: 0 auto;
-}
-
-#Colección .busto-info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#Colección .busto-info h3 {
-  width: 100%;
-  text-align: center;
-  margin: 0 0 15px;
-  min-height: auto;
-}
-
-#Colección .busto-info p {
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-  line-height: 1.7;
-  margin: 10px auto 15px;
-}
-
-#Colección .busto-buy {
-  width: 100%;
-  max-width: 360px;
-  margin: 5px auto 0;
-}
-
-/* ADAPTACIÓN A MÓVILES */
-
-@media (max-width: 600px) {
-  #Colección .grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  #Colección .busto-card {
-    padding: 20px;
-  }
-
-  #Colección .busto-main-image {
-    height: 300px;
-  }
-}
-
-  /* ...resto de tu CSS... */
-
-
-/* CORRECCIÓN DEFINITIVA DE LA CUADRÍCULA DE COLECCIÓN */
-
-#Colección {
-  width: 100% !important;
-}
-
-#Colección .grid {
-  display: grid !important;
-  width: 100% !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  justify-content: stretch !important;
-  align-items: stretch !important;
-  gap: 22px !important;
-}
-
-#Colección .grid > .card {
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: none !important;
-}
-
-/* TABLETS */
-@media (max-width: 1000px) {
-  #Colección .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-
-/* MÓVILES */
-@media (max-width: 600px) {
-  #Colección .grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-
-/* MEJORA VISUAL DE LA COLECCIÓN */
-
-#Colección .grid {
-  gap: 18px !important;
-}
-
-#Colección .grid > .card {
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 20px !important;
-  border: 1px solid rgba(190, 151, 67, 0.25) !important;
-  border-radius: 9px !important;
-  background: #1b1a18 !important;
-  transition: border-color 0.25s ease, transform 0.25s ease,
-              box-shadow 0.25s ease !important;
-}
-
-#Colección .grid > .card:hover {
-  border-color: #b99545 !important;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-}
-
-/* IMÁGENES */
-#Colección .grid > .card img {
-  display: block !important;
-  width: 100% !important;
-  height: 200px !important;
-  object-fit: contain !important;
-  margin: 0 auto 12px !important;
-}
-
-/* TÍTULOS */
-#Colección .grid > .card h3 {
-  min-height: 48px;
-  margin: 4px 0 14px !important;
-  text-align: center !important;
-  line-height: 1.3 !important;
-  font-size: 16px !important;
-}
-
-/* DESCRIPCIONES */
-#Colección .grid > .card p {
-  font-size: 13px !important;
-  line-height: 1.65 !important;
-  color: #c0bdba !important;
-}
-
-/* BOTONES */
-#Colección .grid > .card a {
-  margin-top: auto !important;
-}
-
-/* TABLETS */
-@media (max-width: 1000px) {
-  #Colección .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-
-/* MÓVILES */
-@media (max-width: 600px) {
-  #Colección .grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
 </style>
 </head>
 
@@ -634,7 +493,7 @@ footer {
 
 <header>
   <div class="brand">
-    <img src="logo-trifolium.jpg..jpg" alt="Logo de Trifolium Aeternum">
+    <img src="logo-trifolium.jpg" alt="Logo de Trifolium Aeternum">
     <span>TRIFOLIUMAETERNUM</span>
   </div>
 
@@ -663,10 +522,9 @@ footer {
   <div class="tabs" role="tablist" aria-label="Categorías de productos">
     <button class="tab active" role="tab" aria-selected="true" data-tab="libros">📚 Libros</button>
     <button class="tab" role="tab" aria-selected="false" data-tab="camisetas">👕 Camisetas</button>
-    <button class="tab" role="tab" aria-selected="false" data-tab="Colección">🏛️ Colección</button>
-    <button class="tab" role="tab" aria-selected="false" data-tab="Vestimenta y equipamiento">🛡️ Vestimenta y equipamiento</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="coleccion">🏛️ Colección</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="vestimenta">🛡️ Vestimenta y equipamiento</button>
     <button class="tab" role="tab" aria-selected="false" data-tab="juegos">🎮 Juegos</button>
-   
   </div>
 
   <!-- LIBROS -->
@@ -676,12 +534,10 @@ footer {
     <!-- TRILOGÍA AFRICANUS -->
 
     <section class="collection">
-
       <h3 class="collection-heading">TRILOGÍA AFRICANUS</h3>
       <div class="collection-line"></div>
 
       <div class="grid">
-
         <div class="card">
           <h3>AFRICANUS: EL HIJO DEL CÓNSUL</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91HfpWDebNL._SL1500_.jpg" alt="Africanus">
@@ -713,19 +569,16 @@ footer {
           <p>Revive la Segunda Guerra Púnica a través de la épica trilogía de Santiago Posteguillo. Desde los primeros pasos de Escipión hasta su enfrentamiento con Aníbal, descubre una de las grandes historias de la antigua Roma.</p>
           <a class="btn" href="https://link.amazon/B0ejEZ1jS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
     <!-- SERIE JULIO CÉSAR -->
 
     <section class="collection">
-
       <h3 class="collection-heading">SERIE JULIO CÉSAR</h3>
       <div class="collection-line"></div>
 
       <div class="grid">
-
         <div class="card">
           <h3>ROMA SOY YO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/719yqLXOmyL._SL1500_.jpg" alt="Roma soy yo">
@@ -757,19 +610,16 @@ footer {
           <p>Descubre el ascenso de Julio César, desde sus primeros pasos en la política romana hasta la conquista de las Galias, en una épica trilogía repleta de intrigas, batallas, ambición y lucha por el poder.</p>
           <a class="btn" href="https://link.amazon/B0dbpleLU" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
     <!-- TRILOGÍA DE TRAJANO -->
 
     <section class="collection">
-
       <h3 class="collection-heading">TRILOGÍA DE TRAJANO</h3>
       <div class="collection-line"></div>
 
       <div class="grid">
-
         <div class="card">
           <h3>LOS ASESINOS DEL EMPERADOR</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61aF5R5hOAL._SL1050_.jpg" alt="Los asesinos del emperador">
@@ -801,25 +651,22 @@ footer {
           <p>Descubre la historia de Trajano, el emperador que llevó Roma a su máxima expansión, a través de una apasionante trilogía repleta de intrigas, guerras y ambición.</p>
           <a class="btn" href="https://link.amazon/B08WRwmpx" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
     <!-- OTROS LIBROS -->
 
     <section class="collection">
-
       <h3 class="collection-heading">OTROS LIBROS DE ROMA</h3>
       <div class="collection-line"></div>
-
       <p class="intro" style="text-align:center">
         Próximamente incorporaremos más libros y obras sobre la historia de Roma.
       </p>
-
     </section>
 
   </div>
-<!-- CAMISETAS Y PRENDAS -->
+
+  <!-- CAMISETAS Y PRENDAS -->
 
   <div class="tab-content" id="camisetas" role="tabpanel">
 
@@ -830,8 +677,6 @@ footer {
       <div class="collection-line"></div>
 
       <div class="grid">
-
-        <!-- CAMISETA 1 -->
         <div class="card">
           <h3>IMPERIO ROMANO GIRLIE – ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91BWf0PNxsL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Imperio Romano Girlie del Historia Antigua Camiseta">
@@ -839,7 +684,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0c4twUve" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 2 -->
         <div class="card">
           <h3>ROMA COLISEO – ANFITEATRO ROMANO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/919aRSi0wTL._CLa%7C2140%2C2000%7C91kDZQUiAXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Roma Coliseo Italia Anfiteatro Romano Camiseta">
@@ -847,7 +691,6 @@ footer {
           <a class="btn" href="https://link.amazon/B09hSBskc" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 3 -->
         <div class="card">
           <h3>ROMA INVICTA SPQR – ÁGUILA ROMANA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91uFmAHcGCL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma Invicta SPQR con águila romana">
@@ -855,7 +698,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0h6DzoUt" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 4 -->
         <div class="card">
           <h3>ROMA SPQR – SÍMBOLO DEL IMPERIO ROMANO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1-Xr2RqOqL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma SPQR símbolo romano">
@@ -863,7 +705,6 @@ footer {
           <a class="btn" href="https://link.amazon/B03FUXMJd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 5 -->
         <div class="card">
           <h3>SPQR – LEGIONARIO DEL EJÉRCITO ROMANO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91I2KKVyEKL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta SPQR legionario del ejército romano">
@@ -871,7 +712,6 @@ footer {
           <a class="btn" href="https://link.amazon/B06wDVzr0" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 6 -->
         <div class="card">
           <h3>ROMA ANTIGUA SPQR</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B15-AXSctvL._CLa%7C2140%2C2000%7C81OfhlsNylL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Roma Antigua SPQR">
@@ -879,7 +719,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0d8EF76C" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 7 -->
         <div class="card">
           <h3>LEGIONARIO ROMANO SPQR</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1fRqw30NVL._CLa%7C2140%2C2000%7C91aZ-3hVtUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Legionario romano SPQR">
@@ -887,7 +726,6 @@ footer {
           <a class="btn" href="https://link.amazon/B06fHQFpB" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 8 -->
         <div class="card">
           <h3>SÍMBOLO DEL IMPERIO ROMANO SPQR</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91Wljy48z7L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Símbolo del Imperio Romano SPQR">
@@ -895,7 +733,6 @@ footer {
           <a class="btn" href="https://link.amazon/B07jRxrvt" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 9 -->
         <div class="card">
           <h3>FUNDACIÓN DE LA REPÚBLICA ROMANA – SPQR Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91KsSHRbpNL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Fundación de la República Romana SPQR Antigua Roma Camiseta">
@@ -903,7 +740,6 @@ footer {
           <a class="btn" href="https://link.amazon/B09Z19QhZ" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 10 -->
         <div class="card">
           <h3>MAPA DEL IMPERIO ROMANO – ANTIGUA ROMA, SPQR Y JULIO CÉSAR</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1fRqw30NVL._CLa%7C2140%2C2000%7C91P99h3NRAL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Mapa del Imperio Romano Antigua Roma SPQR Julio César Camiseta">
@@ -911,7 +747,6 @@ footer {
           <a class="btn" href="https://link.amazon/B09IlpZmR" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 11 -->
         <div class="card">
           <h3>LEGIONES ROMANAS INVENCIBLES – ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C81enCs-0gwL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Legiones romanas invencibles romanos Camiseta">
@@ -919,7 +754,6 @@ footer {
           <a class="btn" href="https://link.amazon/B05tibJrv" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 12 -->
         <div class="card">
           <h3>EL EJÉRCITO ROMANO – ÚNETE A LAS LEGIONES</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91TB00Te3fL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="El ejército romano se une a las legiones Historia romana Camiseta">
@@ -927,7 +761,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0bFDhLdH" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 13 -->
         <div class="card">
           <h3>IMPERIO ROMANO – ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C81QNoN5cMaL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Imperio Romano Antigua Roma Camiseta">
@@ -935,7 +768,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0eYzJeYn" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 14 -->
         <div class="card">
           <h3>HISTORIA ROMANA – DEL REINO AL IMPERIO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B15-AXSctvL._CLa%7C2140%2C2000%7C712kVnYueXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Historia Romana Del Reino al Imperio Antigua Roma Camiseta">
@@ -943,7 +775,6 @@ footer {
           <a class="btn" href="https://link.amazon/B00PyZUj4" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 15 -->
         <div class="card">
           <h3>LA HISTORIA DE ROMA – DESDE SU FUNDACIÓN HASTA SU CAÍDA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91rUFSAwV3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta La historia de Roma">
@@ -951,14 +782,12 @@ footer {
           <a class="btn" href="https://link.amazon/B0dyNSwu7" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 16 -->
         <div class="card">
           <h3>IMPERIO ROMANO IMPERIAL TARDÍO – SÍMBOLO CHI RHO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA13XkRkv0qL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Imperio Romano Imperial Tardío Romano Chi Rho Camiseta">
-          <p>Una camiseta inspirada en el periodo del Imperio Romano Tardío y en el emblemático crismón o símbolo *Chi Rho*, icónico estandarte de la transformación imperial bajo Constantino. Un diseño clave para los apasionados del Bajo Imperio.</p>
+          <p>Una camiseta inspirada en el periodo del Imperio Romano Tardío y en el emblemático crismón o símbolo <em>Chi Rho</em>, icónico estandarte de la transformación imperial bajo Constantino. Un diseño clave para los apasionados del Bajo Imperio.</p>
           <a class="btn" href="https://link.amazon/B0bGaIm2v" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
@@ -969,8 +798,6 @@ footer {
       <div class="collection-line"></div>
 
       <div class="grid">
-
-        <!-- CAMISETA 17 -->
         <div class="card">
           <h3>CANNAE – ANTIGUA BATALLA ENTRE ROMA Y CARTAGO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91moSGHsHtL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cannae Antigua Batalla Roma Cartago">
@@ -978,7 +805,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0aWcZXkn" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 18 -->
         <div class="card">
           <h3>BATALLA DE ZAMA – ROMA CONTRA CARTAGO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91s%2BvZm-zML.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Batalla de Zama Roma contra Cartago">
@@ -986,7 +812,6 @@ footer {
           <a class="btn" href="https://link.amazon/B02rqkm5C" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 19 -->
         <div class="card">
           <h3>CARTAGO ANTIGUA – SÍMBOLO DE TANIT</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1ieKaTDQdL._CLa%7C2140%2C2000%7C81ZYG4LTNzL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cartago antigua Tanit">
@@ -994,7 +819,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0cHx4hzP" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 20 -->
         <div class="card">
           <h3>CARTAGO – ANÍBAL Y LA SEGUNDA GUERRA PÚNICA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C81Y%2BYNieRAL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Cartago Aníbal y Segunda Guerra Púnica">
@@ -1002,7 +826,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0aYeAg8K" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 21 -->
         <div class="card">
           <h3>ANÍBAL BARCA – GENERAL DE CARTAGO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C913ZxMx9%2B3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Aníbal Barca y Cartago">
@@ -1010,7 +833,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0a1iawR6" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 22 -->
         <div class="card">
           <h3>ANÍBAL BARCA – SEGUNDA GUERRA PÚNICA Y BATALLAS</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1B-C6CBSYL._CLa%7C2140%2C2000%7C91gsNIo%2BWXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Segunda Guerra Púnica Batallas Antigua Camiseta">
@@ -1018,7 +840,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0eQ49iXg" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 23 -->
         <div class="card">
           <h3>ANÍBAL BARCA – BATALLAS DE LAS GUERRAS PÚNICAS</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/A1dbsmzbGeL._CLa%7C2140%2C2000%7C91XZoNJJHKL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Batallas de las Guerras Púnicas Cartago Camiseta">
@@ -1026,7 +847,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0fucudhF" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 24 -->
         <div class="card">
           <h3>ANÍBAL BARCA – 2ª GUERRA PÚNICA Y LUCHA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/919aRSi0wTL._CLa%7C2140%2C2000%7C81XluEclkPL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca 2ª Guerra Púnica lucha contra Camiseta">
@@ -1034,7 +854,6 @@ footer {
           <a class="btn" href="https://link.amazon/B07hiUkdT" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CROP TOP 1 -->
         <div class="card">
           <h3>HANNIBAL BARCA – WORLD TOUR HISTORY (CAMISETA CROP TOP)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/A1NUjY0E2ZL._CLa%7C2140%2C2000%7CA1hiGYO7vFL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Mujer Hannibal Barca World Tour History - Camiseta Crop Top">
@@ -1042,7 +861,6 @@ footer {
           <a class="btn" href="https://link.amazon/B01XcxEiy" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- SUDADERA 1 -->
         <div class="card">
           <h3>HANNIBAL BARCA – SEGUNDA GUERRA PÚNICA Y BATALLAS (SUDADERA CON CAPUCHA)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1kIi2m--KL._CLa%7C2140%2C2000%7CB1f1vTUI%2BbL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Segunda Guerra Púnica Batallas Antigua Sudadera con Capucha">
@@ -1050,7 +868,6 @@ footer {
           <a class="btn" href="https://link.amazon/B01wktxp9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- SUDADERA 2 -->
         <div class="card">
           <h3>HANNIBAL BARCA – GUERRA ANTIGUA E HISTORIA DE CARTAGO (SUDADERA CON CAPUCHA)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1kIi2m--KL._CLa%7C2140%2C2000%7CB1D-uToiD7L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Hannibal Guerra Antigua Cartago Historia Sudadera con Capucha">
@@ -1058,7 +875,6 @@ footer {
           <a class="btn" href="https://link.amazon/B078NFbEf" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- MANGA LARGA 1 -->
         <div class="card">
           <h3>HANNIBAL BARCA – BATALLAS DE LAS GUERRAS PÚNICAS (MANGA LARGA)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/A18Zbr2L5LL._CLa%7C2140%2C2000%7CB1sBkZfgVfL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Batallas de las Guerras Púnicas Cartago Manga Larga">
@@ -1066,7 +882,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0bIxwwdL" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA SIN MANGAS 1 -->
         <div class="card">
           <h3>HANNIBAL BARCA – SEGUNDA GUERRA PÚNICA Y BATALLAS (CAMISETA SIN MANGAS)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B14MqFUkUdL._CLa%7C2140%2C2000%7C91KyFXmKt4L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Segunda Guerra Púnica Batallas Antigua Camiseta sin Mangas">
@@ -1074,7 +889,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0cN9C3gE" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA SIN MANGAS 2 -->
         <div class="card">
           <h3>HANNIBAL BARCA – BATALLAS DE LAS GUERRAS PÚNICAS (CAMISETA SIN MANGAS)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1Z65NWFdTL._CLa%7C2140%2C2000%7C91nruPW0piL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Batallas de las Guerras Púnicas Cartago Camiseta sin Mangas">
@@ -1082,14 +896,12 @@ footer {
           <a class="btn" href="https://link.amazon/B0d0zQoM1" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA SIN MANGAS 3 -->
         <div class="card">
           <h3>HANNIBAL BARCA – CITA SOBRE LA PERCEPCIÓN Y CARTAGO ANTIGUA (CAMISETA SIN MANGAS)</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B14MqFUkUdL._CLa%7C2140%2C2000%7C71wY5ZVrL3L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Hannibal Barca Quote On Perception - Ancient Carthage Camiseta sin Mangas">
           <p>Una camiseta sin mangas inspirada en las reflexiones y citas célebres del legendario general cartaginés Aníbal Barca. Un diseño deportivo y lleno de sabiduría clásica para los entusiastas de la historia antigua.</p>
           <a class="btn" href="https://link.amazon/B0am0FpNN" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
@@ -1100,8 +912,6 @@ footer {
       <div class="collection-line"></div>
 
       <div class="grid">
-
-        <!-- CAMISETA 25 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – GIRA MUNDIAL HISTORIA GRIEGA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1cRX6dWM6L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno Gira Mundial Historia Griega">
@@ -1109,7 +919,6 @@ footer {
           <a class="btn" href="https://link.amazon/B00wotzPG" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 26 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – CAMPAÑAS MILITARES EN ORIENTE</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91cMWEE6YRL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno Campañas Militares en Oriente">
@@ -1117,7 +926,6 @@ footer {
           <a class="btn" href="https://link.amazon/B07q94fHb" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 27 -->
         <div class="card">
           <h3>EL IMPERIO DE ALEJANDRO – BATALLAS LEGENDARIAS</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1B-C6CBSYL._CLa%7C2140%2C2000%7CA1Sf9iH-kEL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta El Imperio de Alejandro Batallas Legendarias">
@@ -1125,7 +933,6 @@ footer {
           <a class="btn" href="https://link.amazon/B07fszMBr" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 28 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – ESCUDO ICONO DE MACEDONIA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1Wp5QNaRQL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno Escudo Icono de Macedonia">
@@ -1133,7 +940,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0iSkcdzB" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 29 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – SÍMBOLO DEL CASCO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91eraban%2BKL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno símbolo del casco">
@@ -1141,7 +947,6 @@ footer {
           <a class="btn" href="https://link.amazon/B06ILpxpD" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 30 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – ANTIGUA MACEDONIA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91F3AfjYbcL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno Antigua Macedonia">
@@ -1149,7 +954,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0fg7RiTS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 31 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – REY MACEDONIO E HISTORIA GRIEGA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1nNNhQoemL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro el Gran Rey macedonio e Historia Griega">
@@ -1157,7 +961,6 @@ footer {
           <a class="btn" href="https://link.amazon/B01EMTUvz" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 32 -->
         <div class="card">
           <h3>ESCUDO DE MACEDONIA – SÍMBOLO DE ALEJANDRO MAGNO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1iA86s5FRL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Escudo de Makedon antiguo Símbolo de Alejandro Magno">
@@ -1165,7 +968,6 @@ footer {
           <a class="btn" href="https://link.amazon/B07p36ZXP" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 33 -->
         <div class="card">
           <h3>AL MÁS FUERTE – ALEJANDRO MAGNO Y MACEDONIA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C81xSM0G0QpL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Al más fuerte Alejandro Magno Macedonia Cita">
@@ -1173,7 +975,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0bQPyYBz" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 34 -->
         <div class="card">
           <h3>RETRATO DE GUERRERO CLÁSICO – ALEJANDRO MAGNO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1vNvj48RvL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Retrato de Guerrero clásico Alejandro Magno">
@@ -1181,7 +982,6 @@ footer {
           <a class="btn" href="https://link.amazon/B05YuHgpz" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 35 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – ANTIGUAS BATALLAS, GLORIA Y SÍMBOLO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91vD4%2B32eyL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno Antiguas Batallas Gloria Símbolo">
@@ -1189,7 +989,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0jd2SEev" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 36 -->
         <div class="card">
           <h3>MAKEDON – ANTIGUA MACEDONIA E HISTORIA GRIEGA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91UrfCCvT8L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Makedon Antigua Macedonia Historia griega">
@@ -1197,7 +996,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0hWiX6vI" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 37 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – SÍMBOLO DEL IMPERIO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91DK%2BRIX0QL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Alejandro Magno Símbolo del Imperio">
@@ -1205,14 +1003,12 @@ footer {
           <a class="btn" href="https://link.amazon/B02deFo9d" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 38 -->
         <div class="card">
           <h3>ALEJANDRO MAGNO – SÍMBOLO DE MACEDONIA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/A1dbsmzbGeL._CLa%7C2140%2C2000%7C817LYkBHHcL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Símbolo de Alejandro Magno Macedonia">
           <p>Una camiseta centrada en los emblemas y símbolos tradicionales de la antigua Macedonia bajo el reinado de Alejandro Magno. Un diseño clásico para los amantes de la historia macedonia.</p>
           <a class="btn" href="https://link.amazon/B0hDOfSJi" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
@@ -1223,8 +1019,6 @@ footer {
       <div class="collection-line"></div>
 
       <div class="grid">
-
-        <!-- CAMISETA 39 (Introducción Emperadores) -->
         <div class="card">
           <h3>LOS EMPERADORES DE ROMA – HISTORIA ROMANA ANTIGUA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/71HXz82UszL._AC_AIweblab1392912,T4_FMavif_SF1018.5,952.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Los emperadores de Roma Historia romana antigua Camiseta">
@@ -1232,7 +1026,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0cJutmjU" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 40 (Julio César) -->
         <div class="card">
           <h3>JULIO CÉSAR – RETRATO Y LÍDER DE LA ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C912kjzi9JDL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Retrato del Antiguo Emperador de Roma de Julio César">
@@ -1240,15 +1033,13 @@ footer {
           <a class="btn" href="https://link.amazon/B05RzF0h3" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 41 (Augusto) -->
         <div class="card">
           <h3>AUGUSTO – EMPERADOR ROMANO Y FUNDADOR DEL IMPERIO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91C3XHixeHL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Augusto Emperador Romano Antigua Roma Retrato">
-          <p>Una camiseta inspirada en César Augusto, el primer emperador romano que inauguró la *Pax Romana*. Un homenaje clásico al estratega y líder que transformó la República en un imperio perdurable.</p>
+          <p>Una camiseta inspirada en César Augusto, el primer emperador romano que inauguró la <em>Pax Romana</em>. Un homenaje clásico al estratega y líder que transformó la República en un imperio perdurable.</p>
           <a class="btn" href="https://link.amazon/B0g49UacS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 42 (Augusto) -->
         <div class="card">
           <h3>AUGUSTO – IMPERIO ROMANO Y EMPERADOR DE ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C919XErGqd9L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Augusto Imperio Romano Emperador de Roma">
@@ -1256,7 +1047,6 @@ footer {
           <a class="btn" href="https://link.amazon/B02Lob3lE" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 43 (Augusto) -->
         <div class="card">
           <h3>AUGUSTO – ESTATUA DE CÉSAR Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91l6BJWGQtL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Augusto Emperador Romano Antigua Roma Estatua César">
@@ -1264,7 +1054,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0cS6zGdd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 44 (Augusto) -->
         <div class="card">
           <h3>AUGUSTO – ESTATUA DE LA ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA17kPYt82-L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Estatua de la Antigua Roma del Emperador Romano Augustus">
@@ -1272,7 +1061,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0a0ODIoF" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 45 (Tiberio) -->
         <div class="card">
           <h3>RETRATO DEL EMPERADOR ROMANO TIBERIO CÉSAR</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91vkpqWQpYL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Retrato del Emperador Romano Tiberio César Camiseta">
@@ -1280,7 +1068,6 @@ footer {
           <a class="btn" href="https://link.amazon/B08sHYBE9" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 46 (Calígula) -->
         <div class="card">
           <h3>CALÍGULA – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1UCBueYkAL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Calígula Emperador Romano Antigua Roma Historia">
@@ -1288,7 +1075,6 @@ footer {
           <a class="btn" href="https://link.amazon/B06ivvkxy" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 47 (Calígula) -->
         <div class="card">
           <h3>CALÍGULA – ESTATUA OSCURA Y ESTÉTICA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1MZuZiGj9L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Estatua Oscura del Emperador Romano Calígula Estética">
@@ -1296,7 +1082,6 @@ footer {
           <a class="btn" href="https://link.amazon/B02LkV0iT" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 48 (Calígula) -->
         <div class="card">
           <h3>CALÍGULA – TIRANO SIN CORONA OSCURO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1Plwf09VNL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Emperador Romano Calígula Tirano Sin Corona Oscuro">
@@ -1304,7 +1089,6 @@ footer {
           <a class="btn" href="https://link.amazon/B09R9Iamj" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 49 (Claudio) -->
         <div class="card">
           <h3>CLAUDIO – EMPERADOR DE ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C914iJN1%2BKVL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Emperador romano Claudio">
@@ -1312,7 +1096,6 @@ footer {
           <a class="btn" href="https://link.amazon/B03yStS7e" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 50 (Nerón) -->
         <div class="card">
           <h3>NERÓN – EMPERADOR ROMANO E ICONO DE LA ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91LPwFZ6f1L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Nero Emperador Romano Retrato Antiguo Icono de Roma">
@@ -1320,7 +1103,6 @@ footer {
           <a class="btn" href="https://link.amazon/B08V0oikk" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 51 (Nerón) -->
         <div class="card">
           <h3>NERÓN – AVE NERO MORITVR ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1svRuPN6bL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Nero Emperador Romano Ave Nero Moritvr Roma">
@@ -1328,7 +1110,6 @@ footer {
           <a class="btn" href="https://link.amazon/B06DB9V51" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 52 (Nerón) -->
         <div class="card">
           <h3>NERÓN – CIUDAD ARDIENTE DE LA ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/A1dbsmzbGeL._CLa%7C2140%2C2000%7CA1VQxZI%2BWEL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Nero Emperador Romano Antiguo Roma Ciudad Ardiente">
@@ -1336,7 +1117,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0fmMK6X7" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 53 (Nerón / Coliseo) -->
         <div class="card">
           <h3>HISTORIA DEL EMPERADOR ROMANO NERÓN Y EL COLISEO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1bB-f6hRKL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Historia del Emperador Romano Nerón y el Coliseo Camiseta">
@@ -1344,7 +1124,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0eJTuoGd" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 54 (Vespasiano) -->
         <div class="card">
           <h3>VESPASIANO – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1JxV61ysnL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Vespasian Roman Emperor Old Rome History Camiseta">
@@ -1352,7 +1131,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0gh4RsfQ" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 55 (Nerva) -->
         <div class="card">
           <h3>NERVA – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1dW6GwTjiL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Nerva Roman Emperor Old Rome History">
@@ -1360,7 +1138,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0gPoFDnS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 56 (Trajano) -->
         <div class="card">
           <h3>TRAJANO – EMPERADOR DE ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91b9NK48NLL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Trajano Emperador de Roma">
@@ -1368,7 +1145,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0jkX1PPt" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 57 (Trajano - Variante) -->
         <div class="card">
           <h3>TRAJANO – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1oUjPyOdlL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Trajan Roman Emperor Old Rome History Camiseta">
@@ -1376,7 +1152,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0bAK3dnq" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 58 (Adriano) -->
         <div class="card">
           <h3>ADRIANO – EMPERADOR ROMANO, HISTORIA Y ARQUITECTURA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1W8AsVnbbL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Hadrian Imperio Romano Emperador Historia Arquitectura">
@@ -1384,7 +1159,6 @@ footer {
           <a class="btn" href="https://link.amazon/B05WHa0Ut" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 59 (Adriano) -->
         <div class="card">
           <h3>ADRIANO – ESTATUA Y GUERRERO DEL IMPERIO ROMANO</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1wn5sgiu-L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Estatua del Guerrero del Emperador Romano de Adriano Historia de la Antigua Roma">
@@ -1392,7 +1166,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0cQfitP8" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 60 (Adriano y Antínoo) -->
         <div class="card">
           <h3>ADRIANO Y ANTÍNOO – AMANTES DE LA ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1w3AIBD7cL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Amantes del Emperador Antigua Roma Adriano Y Antinoso">
@@ -1400,7 +1173,6 @@ footer {
           <a class="btn" href="https://link.amazon/B03mtISTD" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 61 (Antonino Pío) -->
         <div class="card">
           <h3>ANTONINO PÍO – EMPERADOR ROMANO Y ANTIGÜEDAD CLÁSICA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1av%2B-ry4pL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Antoninus Pius Roman Emperor Classical Antiquity Camiseta">
@@ -1408,7 +1180,6 @@ footer {
           <a class="btn" href="https://link.amazon/B01QmzilH" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 62 (Lucio Vero) -->
         <div class="card">
           <h3>LUCIO VERO – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1xFF%2BvN-6L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Lucius Verus Roman Emperor Old Rome History Camiseta">
@@ -1416,7 +1187,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0c0bGSrQ" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 63 (Marco Aurelio) -->
         <div class="card">
           <h3>MARCO AURELIO – EMPERADOR ROMANO Y FILOSOFÍA ESTOICA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91ZMFe30QFL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Camiseta Emperador Romano Marco Aurelio Filosofía estoica">
@@ -1424,7 +1194,6 @@ footer {
           <a class="btn" href="https://link.amazon/B07kyu4pp" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 64 (Cómodo) -->
         <div class="card">
           <h3>CÓMODO – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1ffoLrS4YL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Cómodo Emperador Romano Antigua Roma Historia Camiseta">
@@ -1432,7 +1201,6 @@ footer {
           <a class="btn" href="https://link.amazon/B0c8J70QS" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 65 (Diocleciano) -->
         <div class="card">
           <h3>DIOCLECIANO – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA14IiTG1WiL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Diocleciano Emperador Romano Vieja Roma Historia Camiseta">
@@ -1440,329 +1208,151 @@ footer {
           <a class="btn" href="https://link.amazon/B0bPezPH7" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
 
-        <!-- CAMISETA 66 (Aureliano) -->
         <div class="card">
           <h3>AURELIANO – EMPERADOR ROMANO Y ANTIGUA ROMA</h3>
           <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7CA1P6xmb0rEL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX679_.png" alt="Aurelian Roman Emperor Old Rome History Camiseta">
-          <p>Una camiseta dedicada a Lucio Domicio Aureliano, el célebre emperador conocido como *Restitutor Orbis* por reunificar el Imperio Romano durante la crisis del siglo III y fortificar Roma. Un diseño indispensable para los amantes de la historia militar romana.</p>
+          <p>Una camiseta dedicada a Lucio Domicio Aureliano, el célebre emperador conocido como <em>Restitutor Orbis</em> por reunificar el Imperio Romano durante la crisis del siglo III y fortificar Roma. Un diseño indispensable para los amantes de la historia militar romana.</p>
           <a class="btn" href="https://link.amazon/B07IpyKcw" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
         </div>
-
       </div>
     </section>
 
   </div>
 
+  <!-- COLECCIÓN -->
 
-<!-- COLECCIÓN -->
+  <div class="tab-content" id="coleccion" role="tabpanel">
+    <div class="grid">
 
-<div class="tab-content" id="Colección" role="tabpanel">
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/51nTL4pzauL._AC_AIweblab1392912,T4_FMavif_SF1018.5,1018.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero retro del Imperio Romano SPQR">
+        <h3>Llavero retro del Imperio Romano SPQR</h3>
+        <p>Llavero de cristal con cúpula artesanal y símbolo de la Legión Imperial Romana, con diseño retro inspirado en el Imperio romano.</p>
+        <a class="btn" href="https://link.amazon/B0eiEWWIC" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
 
-  <div class="grid">
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/619d17XcHdL._AC_AIweblab1392912,T4_FMavif_SF1018.5,1270.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero miniatura de yelmo de gladiador romano">
+        <h3>Eurofusioni - Llavero de yelmo de gladiador romano</h3>
+        <p>Llavero con una reproducción en miniatura de un yelmo de gladiador romano de 3,8 cm. Un original accesorio y una idea de regalo para los aficionados a la Antigua Roma.</p>
+        <a class="btn" href="https://link.amazon/B0erI8cYB" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
 
-    <!-- LLAVERO SPQR -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/51nTL4pzauL._AC_AIweblab1392912,T4_FMavif_SF1018.5,1018.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero retro del Imperio Romano SPQR">
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/512NKJkKfDL._AC_SL1000_.jpg" alt="Llavero SPQR del Imperio Romano de madera de haya natural">
+        <h3>Llavero Imperio Romano SPQR Roma</h3>
+        <p>Llavero con el emblema SPQR, elaborado en madera de haya natural y metal, con un grabado en bajorrelieve. Un original accesorio para los aficionados a la Antigua Roma.</p>
+        <a class="btn" href="https://link.amazon/B08lmVGQi" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
 
-      <h3>Llavero retro del Imperio Romano SPQR</h3>
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/514ml8upvML._AC_AIweblab1392912,T4_FMavif_SF516.0,1318.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero con forma de casco espartano de bronce">
+        <h3>Llavero Casco Espartano de Bronce</h3>
+        <p>Llavero con diseño de casco espartano en acabado bronce, ideal para llevar como colgante en las llaves o en el bolso. Un original regalo para los aficionados a la historia y a los guerreros de la Antigüedad.</p>
+        <a class="btn" href="https://link.amazon/B09T7RmQm" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
 
-      <p>
-        Llavero de cristal con cúpula artesanal y símbolo de la Legión Imperial Romana,
-        con diseño retro inspirado en el Imperio romano.
-      </p>
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/51wT9+z2Y3L._AC_AIweblab1392912,T4_FMavif_SF975.0,1318.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero miniatura de yelmo de centurión romano">
+        <h3>Eurofusioni - Llavero de yelmo de centurión romano</h3>
+        <p>Llavero con una reproducción en miniatura de un yelmo de centurión romano de 2,7 cm. Un original accesorio y una idea de regalo para los aficionados a la Antigua Roma y sus legiones.</p>
+        <a class="btn" href="https://link.amazon/B0cOQHufp" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
 
-      <a class="btn" href="https://link.amazon/B0eiEWWIC"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/71TLRIW4MpL._AC_AIweblab1392912,T4_FMavif_SF1018.5,1018.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero colgante de casco romano vintage">
+        <h3>Llavero colgante de casco romano vintage</h3>
+        <p>Llavero metálico con diseño de casco romano de estilo vintage. Un original accesorio para las llaves y una idea de regalo para los aficionados a la Antigua Roma y su historia militar.</p>
+        <a class="btn" href="https://link.amazon/B0hiz5Fns" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61u4yFhhHIL._AC_SL1071_.jpg" alt="Llavero personalizado con diseño de moneda romana grabada en madera">
+        <h3>Llavero moneda romana personalizado con nombre</h3>
+        <p>Llavero personalizable con diseño de una antigua moneda romana, grabado en madera con el nombre que elijas. Un detalle original y un regalo especial para los aficionados al Imperio Romano.</p>
+        <a class="btn" href="https://link.amazon/B09KgoEqE" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/51mlUl7D5LL._AC_AIweblab1392912,T4_FMavif_SF988.5,1318.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero plateado de doble cara con la diosa Atenea y el búho">
+        <h3>IconsGr - Llavero ateniense de Atenea y el búho</h3>
+        <p>Llavero de doble cara con la imagen de la diosa Atenea y el búho, símbolo de la sabiduría en la antigua Grecia. Presenta un acabado plateado y un diseño inspirado en la tradición ateniense.</p>
+        <a class="btn" href="https://link.amazon/B0gVuswRr" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/I/31aKyYYHs2S._AC_AIweblab1392912,T4_FMavif_SF750.0,724.5_PQ65_.jpg?aicid=detailPage-mediaBlock" alt="Llavero con espada gladius romana de peltre">
+        <h3>H6 - Llavero Gladius romano de peltre inglés</h3>
+        <p>Llavero artesanal con una reproducción de un gladius romano, elaborado en fino peltre inglés y acompañado de un diseño de serpiente. Hecho a mano en Sheffield y presentado en un envoltorio de regalo artesanal.</p>
+        <a class="btn" href="https://link.amazon/B0dcvNJSf" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
+      <article class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/418H2QYWfyL._AC_SL1500_.jpg" alt="Busto de Marco Aurelio, vista frontal">
+        <h3>BUSTO DE MARCO AURELIO</h3>
+        <p>Busto escultórico inspirado en Marco Aurelio, emperador romano y destacado representante de la filosofía estoica. Una reproducción clásica de yeso, con acabado de aspecto bronce oscuro, barba y cabello rizado, túnica romana y base de pedestal. Ideal para decorar cualquier espacio dedicado a la historia de Roma.</p>
+        <a class="btn" href="https://link.amazon/B04ccRKuq" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </article>
+
+      <article class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91K0McwSDyL._AC_SL1500_.jpg" alt="Mapa del Imperio Romano bajo Constantino, póster vintage de Spruner">
+        <h3>1865 SPRUNER - Mapa del Imperio Romano bajo Constantino</h3>
+        <p>Reproducción de un mapa histórico de 1865 que representa el Imperio romano durante el reinado de Constantino. Impresión vintage de 30 × 40 cm.</p>
+        <a class="btn" href="https://link.amazon/B03zWR2G5" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </article>
+
+      <article class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71u9NdAjJHL._AC_SL1500_.jpg" alt="TOYVERSE JOYTOY 1/18 Strife, Gladiador romano Secutor">
+        <h3>TOYVERSE JOYTOY 1/18 - Strife, Gladiador romano Secutor</h3>
+        <p>Figura de acción articulada de un gladiador romano de tipo secutor, con una altura aproximada de 10,8 cm.</p>
+        <a class="btn" href="https://link.amazon/B09CZjN8G" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </article>
+
+      <article class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/41D8MZiJ1qL._AC_.jpg" alt="Figura decorativa de gladiador romano Murmillo Veronese">
+        <h3>Veronese - Figura de gladiador romano Murmillo en combate</h3>
+        <p>Escultura decorativa de un gladiador romano de tipo murmillo, representado en lucha con espada y casco. Altura aproximada de 24,5 cm.</p>
+        <a class="btn" href="https://link.amazon/B08SG3qnI" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </article>
+
     </div>
-
-
-    <!-- LLAVERO YELMO DE GLADIADOR -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/619d17XcHdL._AC_AIweblab1392912,T4_FMavif_SF1018.5,1270.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero miniatura de yelmo de gladiador romano">
-
-      <h3>Eurofusioni - Llavero de yelmo de gladiador romano</h3>
-
-      <p>
-        Llavero con una reproducción en miniatura de un yelmo de gladiador romano
-        de 3,8 cm. Un original accesorio y una idea de regalo para los aficionados
-        a la Antigua Roma.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B0erI8cYB"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO SPQR DE MADERA -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/512NKJkKfDL._AC_SL1000_.jpg"
-        alt="Llavero SPQR del Imperio Romano de madera de haya natural">
-
-      <h3>Llavero Imperio Romano SPQR Roma</h3>
-
-      <p>
-        Llavero con el emblema SPQR, elaborado en madera de haya natural y metal,
-        con un grabado en bajorrelieve. Un original accesorio para los aficionados
-        a la Antigua Roma.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B08lmVGQi"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO CASCO ESPARTANO DE BRONCE -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/514ml8upvML._AC_AIweblab1392912,T4_FMavif_SF516.0,1318.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero con forma de casco espartano de bronce">
-
-      <h3>Llavero Casco Espartano de Bronce</h3>
-
-      <p>
-        Llavero con diseño de casco espartano en acabado bronce, ideal para
-        llevar como colgante en las llaves o en el bolso. Un original regalo
-        para los aficionados a la historia y a los guerreros de la Antigüedad.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B09T7RmQm"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO YELMO DE CENTURIÓN ROMANO -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/51wT9+z2Y3L._AC_AIweblab1392912,T4_FMavif_SF975.0,1318.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero miniatura de yelmo de centurión romano">
-
-      <h3>Eurofusioni - Llavero de yelmo de centurión romano</h3>
-
-      <p>
-        Llavero con una reproducción en miniatura de un yelmo de centurión
-        romano de 2,7 cm. Un original accesorio y una idea de regalo para
-        los aficionados a la Antigua Roma y sus legiones.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B0cOQHufp"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO CASCO ROMANO VINTAGE -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/71TLRIW4MpL._AC_AIweblab1392912,T4_FMavif_SF1018.5,1018.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero colgante de casco romano vintage">
-
-      <h3>Llavero colgante de casco romano vintage</h3>
-
-      <p>
-        Llavero metálico con diseño de casco romano de estilo vintage.
-        Un original accesorio para las llaves y una idea de regalo para
-        los aficionados a la Antigua Roma y su historia militar.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B0hiz5Fns"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO MONEDA ROMANA PERSONALIZADO -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61u4yFhhHIL._AC_SL1071_.jpg"
-        alt="Llavero personalizado con diseño de moneda romana grabada en madera">
-
-      <h3>Llavero moneda romana personalizado con nombre</h3>
-
-      <p>
-        Llavero personalizable con diseño de una antigua moneda romana,
-        grabado en madera con el nombre que elijas. Un detalle original
-        y un regalo especial para los aficionados al Imperio Romano.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B09KgoEqE"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO ATENEA Y EL BÚHO -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/51mlUl7D5LL._AC_AIweblab1392912,T4_FMavif_SF988.5,1318.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero plateado de doble cara con la diosa Atenea y el búho">
-
-      <h3>IconsGr - Llavero ateniense de Atenea y el búho</h3>
-
-      <p>
-        Llavero de doble cara con la imagen de la diosa Atenea y el búho,
-        símbolo de la sabiduría en la antigua Grecia. Presenta un acabado
-        plateado y un diseño inspirado en la tradición ateniense.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B0gVuswRr"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- LLAVERO GLADIUS ROMANO DE PELTRE -->
-    <div class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/I/31aKyYYHs2S._AC_AIweblab1392912,T4_FMavif_SF750.0,724.5_PQ65_.jpg?aicid=detailPage-mediaBlock"
-        alt="Llavero con espada gladius romana de peltre">
-
-      <h3>H6 - Llavero Gladius romano de peltre inglés</h3>
-
-      <p>
-        Llavero artesanal con una reproducción de un gladius romano,
-        elaborado en fino peltre inglés y acompañado de un diseño de
-        serpiente. Hecho a mano en Sheffield y presentado en un
-        envoltorio de regalo artesanal.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B0dcvNJSf"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </div>
-
-
-    <!-- BUSTO DE MARCO AURELIO -->
-    <article class="card busto-card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/418H2QYWfyL._AC_SL1500_.jpg"
-        alt="Busto de Marco Aurelio, vista frontal">
-
-      <h3>BUSTO DE MARCO AURELIO</h3>
-
-      <p>
-        Busto escultórico inspirado en Marco Aurelio, emperador romano y destacado representante de la filosofía estoica. Una reproducción clásica de yeso, con acabado de aspecto bronce oscuro, barba y cabello rizado, túnica romana y base de pedestal. Ideal para decorar cualquier espacio dedicado a la historia de Roma.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B04ccRKuq"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </article>
-
-
-    <!-- MAPA DE SPRUNER -->
-    <article class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/91K0McwSDyL._AC_SL1500_.jpg"
-        alt="Mapa del Imperio Romano bajo Constantino, póster vintage de Spruner">
-
-      <h3>1865 SPRUNER - Mapa del Imperio Romano bajo Constantino</h3>
-
-      <p>
-        Reproducción de un mapa histórico de 1865 que representa el Imperio romano durante el reinado de Constantino. Impresión vintage de 30 × 40 cm.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B03zWR2G5"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </article>
-
-
-    <!-- GLADIADOR SECUTOR -->
-    <article class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71u9NdAjJHL._AC_SL1500_.jpg"
-        alt="TOYVERSE JOYTOY 1/18 Strife, Gladiador romano Secutor">
-
-      <h3>TOYVERSE JOYTOY 1/18 - Strife, Gladiador romano Secutor</h3>
-
-      <p>
-        Figura de acción articulada de un gladiador romano de tipo secutor, con una altura aproximada de 10,8 cm.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B09CZjN8G"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </article>
-
-
-    <!-- GLADIADOR MURMILLO -->
-    <article class="card">
-      <img class="book-cover" loading="lazy"
-        src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/41D8MZiJ1qL._AC_.jpg"
-        alt="Figura decorativa de gladiador romano Murmillo Veronese">
-
-      <h3>Veronese - Figura de gladiador romano Murmillo en combate</h3>
-
-      <p>
-        Escultura decorativa de un gladiador romano de tipo murmillo, representado en lucha con espada y casco. Altura aproximada de 24,5 cm.
-      </p>
-
-      <a class="btn" href="https://link.amazon/B08SG3qnI"
-        target="_blank" rel="noopener noreferrer">
-        VER PRECIO
-      </a>
-    </article>
-
   </div>
 
-</div>
+  <!-- VESTIMENTA Y EQUIPAMIENTO -->
 
- 
-<!-- VESTIMENTA Y EQUIPAMIENTO -->
+  <div class="tab-content" id="vestimenta" role="tabpanel">
+    <div class="grid">
 
-<div class="tab-content" id="Vestimenta y equipamiento" role="tabpanel">
-  <div class="grid">
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71dVutEKT2L._AC_SL1254_.jpg" alt="Roman Centurion - Réplica de casco de acero calibre 18 con penacho amarillo">
+        <h3>Roman Centurion - Réplica de casco de acero calibre 18 con penacho amarillo</h3>
+        <p>Réplica de un casco de centurión romano, fabricado en acero y con una cresta amarilla.</p>
+        <a class="btn" href="https://link.amazon/B0dDgRn8O" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
 
-    <div class="card">
-      <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71dVutEKT2L._AC_SL1254_.jpg" alt="Roman Centurion - Réplica de casco de acero calibre 18 con ciruela amarilla">
-      <h3>Roman Centurion - Réplica de casco de acero calibre 18 con ciruela amarilla</h3>
-      <p>Réplica de un casco de centurión romano, fabricado en acero y con una cresta amarilla.</p>
-      <a class="btn" href="https://link.amazon/B0dDgRn8O" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61cg+U1cY9L._AC_SL1333_.jpg" alt="Medieval Replicas Casco Medieval Griego Espartano corintio con Pluma Negra Antigua">
+        <h3>Medieval Replicas - Casco Medieval Griego Espartano corintio con Pluma Negra Antigua</h3>
+        <p>Réplica de un casco corintio de estilo espartano, con una característica pluma negra.</p>
+        <a class="btn" href="https://link.amazon/B01x30Ty8" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51GCKTbdOdL._AC_SL1297_.jpg" alt="Artes Marciales Negro Polipropileno Plástico Gladius Entrenamiento Espada V3">
+        <h3>Artes Marciales - Gladius de entrenamiento de plástico negro V3</h3>
+        <p>Réplica de entrenamiento de un gladius romano fabricada en polipropileno negro, diseñada para la práctica de artes marciales.</p>
+        <a class="btn" href="https://link.amazon/B0dfdjSE2" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
+      <div class="card">
+        <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61uPQKaAU7L._AC_SL1500_.jpg" alt="AZ FLAG Bandera Imperio Romano SPQR 150x90 cm">
+        <h3>AZ FLAG - Bandera del Imperio Romano SPQR (150 × 90 cm)</h3>
+        <p>Bandera de temática romana con la inscripción SPQR, fabricada en poliéster 100D y equipada con dos ojales.</p>
+        <a class="btn" href="https://link.amazon/B00XUgPHq" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
+      </div>
+
     </div>
-
-  <div class="card">
-  <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61cg+U1cY9L._AC_SL1333_.jpg" alt="Medieval Replicas Casco Medieval Griego Espartano corintio con Pluma Negra Antigua">
-  <h3>Medieval Replicas - Casco Medieval Griego Espartano corintio con Pluma Negra Antigua</h3>
-  <p>Réplica de un casco corintio de estilo espartano, con una característica pluma negra.</p>
-  <a class="btn" href="https://link.amazon/B01x30Ty8" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-</div>
-
-    <div class="card">
-  <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51GCKTbdOdL._AC_SL1297_.jpg" alt="Artes Marciales Negro Polipropileno Plástico Gladius Entrenamiento Espada V3">
-  <h3>Artes Marciales - Gladius de entrenamiento de plástico negro V3</h3>
-  <p>Réplica de entrenamiento de un gladius romano fabricada en polipropileno negro, diseñada para la práctica de artes marciales.</p>
-  <a class="btn" href="https://link.amazon/B0dfdjSE2" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-</div>
-
-    <div class="card">
-  <img class="book-cover" loading="lazy" src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61uPQKaAU7L._AC_SL1500_.jpg" alt="AZ FLAG Bandera Imperio Romano SPQR 150x90 cm">
-  <h3>AZ FLAG - Bandera del Imperio Romano SPQR (150 × 90 cm)</h3>
-  <p>Bandera de temática romana con la inscripción SPQR, fabricada en poliéster 100D y equipada con dos ojales.</p>
-  <a class="btn" href="https://link.amazon/B00XUgPHq" target="_blank" rel="noopener noreferrer">VER PRECIO</a>
-</div>
-</div>
-
+  </div>
 
   <!-- JUEGOS -->
 
@@ -1776,7 +1366,6 @@ footer {
       </div>
     </div>
   </div>
-
 
 </section>
 
