@@ -1483,11 +1483,16 @@ const tabs = document.querySelectorAll(".tab");
 const contents = document.querySelectorAll(".tab-content");
 const searchInput = document.getElementById("searchInput");
 
+function resetViewToActiveTab() {
+  document.querySelectorAll(".card").forEach(card => card.style.display = "");
+  document.querySelectorAll(".collection").forEach(col => col.style.display = "");
+  contents.forEach(content => content.style.display = "");
+}
+
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
     searchInput.value = "";
-    document.querySelectorAll(".card").forEach(card => card.style.display = "");
-    document.querySelectorAll(".collection").forEach(col => col.style.display = "");
+    resetViewToActiveTab();
 
     tabs.forEach(item => {
       item.classList.remove("active");
@@ -1508,19 +1513,34 @@ tabs.forEach(tab => {
 
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase().trim();
-  const activeTab = document.querySelector(".tab-content.active");
-  if (!activeTab) return;
 
-  const cards = activeTab.querySelectorAll(".card");
-  cards.forEach(card => {
-    const text = card.textContent.toLowerCase();
-    card.style.display = text.includes(query) ? "" : "none";
-  });
+  // Si el buscador está vacío, vuelve a la vista normal por pestañas
+  if (query === "") {
+    resetViewToActiveTab();
+    return;
+  }
 
-  const collections = activeTab.querySelectorAll(".collection");
-  collections.forEach(col => {
-    const visibleCards = col.querySelectorAll(".card:not([style*='display: none'])");
-    col.style.display = (query !== "" && visibleCards.length === 0) ? "none" : "";
+  // Si hay texto, busca en TODAS las categorías a la vez
+  contents.forEach(content => {
+    const cards = content.querySelectorAll(".card");
+    let hasVisibleCards = false;
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const match = text.includes(query);
+      card.style.display = match ? "" : "none";
+      if (match) hasVisibleCards = true;
+    });
+
+    // Oculta subcategorías que queden vacías
+    const collections = content.querySelectorAll(".collection");
+    collections.forEach(col => {
+      const visibleInCol = col.querySelectorAll(".card:not([style*='display: none'])");
+      col.style.display = visibleInCol.length === 0 ? "none" : "";
+    });
+
+    // Muestra la pestaña solo si contiene algún producto que coincida
+    content.style.display = hasVisibleCards ? "block" : "none";
   });
 });
 </script>
