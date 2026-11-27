@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRIFOLIUMAETERNUM | Historia y Roma</title>
-
 <style>
 :root {
   --bg-dark: #11110f;
@@ -349,53 +348,67 @@ nav a:hover {
   line-height: 1.55;
 }
 
-/* APARTADO DE COLECCIÓN */
+/* APARTADO DE COLECCIÓN Y VESTIMENTA (IMÁGENES MEJORADAS) */
 
-#coleccion {
+#coleccion .grid,
+#vestimenta .grid {
   width: 100%;
-}
-
-#coleccion .grid {
-  width: 100%;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  justify-content: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 270px));
+  justify-content: center;
   align-items: stretch;
-  gap: 18px;
+  gap: 20px;
 }
 
-#coleccion .grid > .card {
+#coleccion .card,
+#vestimenta .card {
   width: 100%;
   min-width: 0;
   max-width: none;
-  padding: 20px;
+  padding: 18px;
   border: 1px solid rgba(190, 151, 67, 0.25);
   border-radius: 9px;
   background: #1b1a18;
 }
 
-#coleccion .grid > .card:hover {
+#coleccion .card:hover,
+#vestimenta .card:hover {
   border-color: #b99545;
   transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
 }
 
-#coleccion .grid > .card img {
+#coleccion .card .book-cover,
+#vestimenta .card .book-cover {
   width: 100%;
-  height: 200px;
+  max-width: 100%;
+  height: 210px;
   object-fit: contain;
-  margin: 0 auto 12px;
+  background-color: #ffffff;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  margin: 0 auto 14px;
+  transition: transform 0.25s ease;
 }
 
-#coleccion .grid > .card h3 {
-  min-height: 48px;
-  margin: 4px 0 14px;
-  line-height: 1.3;
+#coleccion .card:hover .book-cover,
+#vestimenta .card:hover .book-cover {
+  transform: scale(1.03);
+}
+
+#coleccion .card h3,
+#vestimenta .card h3 {
+  min-height: 52px;
+  margin: 4px 0 10px;
+  text-align: center;
+  line-height: 1.35;
   font-size: 16px;
 }
 
-#coleccion .grid > .card p {
+#coleccion .card p,
+#vestimenta .card p {
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: #c0bdba;
 }
 
@@ -413,8 +426,7 @@ footer {
 /* TABLETS */
 
 @media (max-width: 1000px) {
-  #camisetas .grid,
-  #coleccion .grid {
+  #camisetas .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
@@ -466,7 +478,8 @@ footer {
   }
 
   #camisetas .grid,
-  #coleccion .grid {
+  #coleccion .grid,
+  #vestimenta .grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
@@ -480,11 +493,14 @@ footer {
     font-size: 17px;
   }
 
-  #camisetas .card .book-cover {
+  #camisetas .card .book-cover,
+  #coleccion .card .book-cover,
+  #vestimenta .card .book-cover {
     height: 220px;
   }
 }
 </style>
+
 </head>
 
 <body>
