@@ -189,7 +189,7 @@ nav a:hover {
   margin: 0 auto 25px;
 }
 
-/* CUADRÍCULA UNIFICADA PARA TODAS LAS CATEGORÍAS */
+/* CUADRÍCULA UNIFICADA */
 
 .grid {
   display: grid;
@@ -200,7 +200,7 @@ nav a:hover {
   gap: 20px;
 }
 
-/* TARJETAS UNIFICADAS */
+/* TARJETAS */
 
 .card {
   width: 100%;
@@ -220,7 +220,7 @@ nav a:hover {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
 }
 
-/* IMÁGENES EN VITRINA UNIFORME (LIBROS, CAMISETAS, COLECCIÓN, VESTIMENTA Y JUEGOS) */
+/* IMÁGENES EN VITRINA (CAMISETAS, COLECCIÓN, VESTIMENTA Y TRILOGÍAS) */
 
 .book-cover,
 .bundle-cover,
@@ -238,7 +238,19 @@ nav a:hover {
   transition: transform 0.25s ease;
 }
 
-/* CONTENEDOR DE ICONO PARA JUEGOS (MISMA ALTURA Y ESTILO) */
+/* EXCEPCIÓN: PORTADAS DE LIBROS INDIVIDUALES COMO ANTES */
+
+#libros .book-cover {
+  width: 150px;
+  height: 230px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  margin: 5px auto 10px;
+}
+
+/* CONTENEDOR DE ICONO PARA JUEGOS */
 
 .photo {
   height: 215px;
@@ -398,6 +410,11 @@ footer {
   .card img,
   .photo {
     height: 220px;
+  }
+
+  #libros .book-cover {
+    width: 150px;
+    height: 230px;
   }
 }
 </style>
